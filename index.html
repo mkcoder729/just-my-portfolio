@@ -738,8 +738,16 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" class="form-control" required placeholder="Enter your email">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" 
+                                           id="email" 
+                                           name="email" 
+                                           class="form-control" 
+                                           required 
+                                           placeholder="Enter your email"
+                                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                           title="Please enter a valid email address (e.g., user@example.com)">
+                                    <div class="validation-error" id="email-error"></div>
                             </div>
 
                             <div class="form-group">
