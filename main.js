@@ -583,3 +583,52 @@
             matrixCanvas.width = window.innerWidth;
             matrixCanvas.height = window.innerHeight;
         });
+
+                // Email validation function
+        function validateEmail(email) {
+            const re = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+            return re.test(String(email).toLowerCase());
+        }
+
+        // Form submission handler with validation
+        document.querySelector('#contactForm').addEventListener('submit', function(e) {
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            let isValid = true;
+
+            // Reset error states
+            emailInput.classList.remove('invalid');
+            emailError.classList.remove('show');
+            emailError.textContent = '';
+
+            // Email validation
+            if (!validateEmail(emailInput.value)) {
+                emailInput.classList.add('invalid');
+                emailError.textContent = 'Please enter a valid email address (e.g., user@example.com)';
+                emailError.classList.add('show');
+                isValid = false;
+            }
+
+            // Prevent form submission if invalid
+            if (!isValid) {
+                e.preventDefault();
+                // Scroll to first error
+                document.querySelector('.invalid').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        });
+
+        // Real-time validation on input
+        document.getElementById('email').addEventListener('input', function() {
+            const emailError = document.getElementById('email-error');
+            if (this.value.length > 0 && !validateEmail(this.value)) {
+                this.classList.add('invalid');
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.classList.add('show');
+            } else {
+                this.classList.remove('invalid');
+                emailError.classList.remove('show');
+            }
+        });
