@@ -1,3 +1,34 @@
+        // ===== SMOOTH SCROLL & PERFORMANCE =====
+        document.addEventListener('DOMContentLoaded', () => {
+          // Debounce scroll/resize events
+          let ticking = false;
+          const optimizeScroll = () => {
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                // Your scroll-sensitive code here
+                ticking = false;
+              });
+              ticking = true;
+            }
+          };
+          window.addEventListener('scroll', optimizeScroll, { passive: true });
+
+          // Preload images after page loads
+          const lazyLoad = () => {
+            const images = document.querySelectorAll('img[data-src]');
+            images.forEach(img => {
+              img.src = img.dataset.src;
+            });
+          };
+
+          // Start after 1s to prioritize critical content
+          setTimeout(lazyLoad, 1000);
+        });
+
+        // Instant page preloading (makes navigation feel instant)
+        if (window.navigation && window.navigation.preload) {
+          window.navigation.preload();
+        }
 
         // ===== Document Ready Function =====
         document.addEventListener('DOMContentLoaded', function() {
