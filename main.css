@@ -397,11 +397,11 @@
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
-         /* ===== Typing Animation Styles ===== */
+        /* ===== Responsive Terminal ===== */
         .terminal-container {
-            width: 200%;
+            width: 90vw; /* Responsive width */
             max-width: 800px;
-            min-width: 300px;
+            min-width: 280px; /* Works even on tiny phones */
             margin: 1rem auto;
             border-radius: 8px;
             overflow: hidden;
@@ -409,105 +409,110 @@
             border: 1px solid #e50914;
             box-shadow: 0 0 30px rgba(229, 9, 20, 0.3);
             font-family: 'Courier New', monospace;
+            transform: translateZ(0); /* GPU acceleration */
         }
-
+        
         .terminal-header {
-            padding: 0.7rem 1rem;
+            padding: clamp(0.5rem, 2vw, 0.7rem) clamp(0.8rem, 3vw, 1rem);
             display: flex;
             align-items: center;
             background: #141414;
             border-bottom: 1px solid rgba(229, 9, 20, 0.3);
         }
-
+        
         .terminal-buttons {
             display: flex;
-            gap: 8px;
-            margin-right: 12px;
-            pointer-events: none; /* Disables all click interactions */
+            gap: clamp(6px, 1vw, 8px);
+            margin-right: clamp(8px, 2vw, 12px);
+            pointer-events: none;
         }
-
+        
         .terminal-btn {
-            width: 13px;
-            height: 13px;
+            width: clamp(10px, 2vw, 13px);
+            height: clamp(10px, 2vw, 13px);
             border-radius: 50%;
-            pointer-events: none; /* Extra protection against clicks */
-            cursor: default !important; /* Force default cursor */
+            pointer-events: none;
+            cursor: default !important;
         }
-
+        
         .terminal-text {
             font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
+            font-size: clamp(0.75rem, 3vw, 0.85rem);
             font-weight: 800;
             color: #e50914;
             text-shadow: 0 0 4px rgba(229, 9, 20, 0.4);
             letter-spacing: 0.03em;
             white-space: pre-wrap;
             line-height: 1.4;
-            padding: 8px 12px;
+            padding: clamp(6px, 1vw, 8px) clamp(8px, 2vw, 12px);
             background: rgba(20, 20, 20, 0.7);
             border-radius: 3px;
             border-left: 2px solid #e50914;
             display: inline-block;
-            overflow-wrap: break-word;
+            overflow-wrap: anywhere; /* Better word breaks */
         }
-
-        .btn-red {
-            background: #ff5f56;
-            pointer-events: none;
-        }
-        .btn-yellow {
-            background: #ffbd2e;
-            pointer-events: none;
-        }
-        .btn-green {
-            background: #27c93f;
-            pointer-events: none;
-        }
-
+        
+        .btn-red { background: #ff5f56; }
+        .btn-yellow { background: #ffbd2e; }
+        .btn-green { background: #27c93f; }
+        
         .terminal-title {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 0.85rem;
+            font-size: clamp(0.75rem, 3vw, 0.85rem);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-
+        
         .terminal-body {
-            padding: 1.5rem;
+            padding: clamp(1rem, 3vw, 1.5rem);
             min-height: 120px;
         }
-
+        
         .terminal-line {
             display: flex;
             color: #e50914;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 4vw, 1.2rem);
             line-height: 1.6;
             text-shadow: 0 0 8px rgba(229, 9, 20, 0.5);
             align-items: center;
             margin-bottom: 0.3rem;
             white-space: pre-wrap;
+            word-break: break-word;
         }
-
+        
         .terminal-prompt {
             color: #27c93f;
-            margin-right: 10px;
+            margin-right: clamp(6px, 1vw, 10px);
             font-weight: bold;
+            flex-shrink: 0;
         }
-
-        #workingText {
-            white-space: pre-wrap;
-        }
-
+        
         .terminal-cursor {
             display: inline-block;
-            width: 10px;
+            width: clamp(8px, 2vw, 10px);
             height: 1.6rem;
             background: #e50914;
             animation: blink 0.8s infinite;
-            margin-left: 5px;
+            margin-left: clamp(3px, 1vw, 5px);
             box-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
         }
-
+        
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
+        }
+        
+        /* Mobile-specific tweaks */
+        @media (max-width: 480px) {
+            .terminal-container {
+                width: 95vw;
+                margin: 0.5rem auto;
+            }
+            .terminal-body {
+                padding: 0.8rem;
+                min-height: 100px;
+            }
         }
         .hero-buttons {
             display: flex;
