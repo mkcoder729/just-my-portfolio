@@ -399,9 +399,9 @@
 
          /* ===== Typing Animation Styles ===== */
         .terminal-container {
-            width: 90vw; /* Changed from 150% to viewport units */
+            width: 90vw;
             max-width: 800px;
-            min-width: 300px; /* Added to prevent too small on mobile */
+            min-width: 300px;
             margin: 1rem auto;
             border-radius: 8px;
             overflow: hidden;
@@ -423,34 +423,46 @@
             display: flex;
             gap: 8px;
             margin-right: 12px;
+            pointer-events: none; /* Disables all click interactions */
         }
 
         .terminal-btn {
             width: 13px;
             height: 13px;
             border-radius: 50%;
+            pointer-events: none; /* Extra protection against clicks */
+            cursor: default !important; /* Force default cursor */
         }
 
         .terminal-text {
             font-family: 'Courier New', monospace;
-            font-size: 0.7rem;
+            font-size: 0.9rem;
             font-weight: 800;
             color: #e50914;
             text-shadow: 0 0 4px rgba(229, 9, 20, 0.4);
             letter-spacing: 0.03em;
-            white-space: pre-wrap; /* Changed from pre to pre-wrap */
+            white-space: pre-wrap;
             line-height: 1.4;
             padding: 8px 12px;
             background: rgba(20, 20, 20, 0.7);
             border-radius: 3px;
             border-left: 2px solid #e50914;
             display: inline-block;
-            overflow-wrap: break-word; /* Added for long words */
+            overflow-wrap: break-word;
         }
 
-        .btn-red { background: #ff5f56; }
-        .btn-yellow { background: #ffbd2e; }
-        .btn-green { background: #27c93f; }
+        .btn-red {
+            background: #ff5f56;
+            pointer-events: none;
+        }
+        .btn-yellow {
+            background: #ffbd2e;
+            pointer-events: none;
+        }
+        .btn-green {
+            background: #27c93f;
+            pointer-events: none;
+        }
 
         .terminal-title {
             color: rgba(255, 255, 255, 0.6);
