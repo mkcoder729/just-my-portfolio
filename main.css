@@ -402,7 +402,7 @@
             width: 90vw; /* Changed from 150% to viewport units */
             max-width: 800px;
             min-width: 300px; /* Added to prevent too small on mobile */
-            margin: 1rem auto;
+            margin: 0.9rem auto;
             border-radius: 8px;
             overflow: hidden;
             background: #0d0d0d;
@@ -433,7 +433,7 @@
 
         .terminal-text {
             font-family: 'Courier New', monospace;
-            font-size: 0.7rem;
+            font-size: 0.9rem;
             font-weight: 800;
             color: #e50914;
             text-shadow: 0 0 4px rgba(229, 9, 20, 0.4);
