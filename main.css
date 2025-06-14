@@ -397,46 +397,39 @@
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
-        /* ===== Responsive Terminal ===== *//* ===== BULLETPROOF TERMINAL CSS ===== */
+        /* ===== Responsive Terminal ===== *//* ===== TERMINAL STYLES ===== */
 .terminal-container {
-  width: 95vw;
-  max-width: 800px;
-  min-width: 280px;
-  height: auto;
-  min-height: 300px;
-  margin: 1rem auto;
-  border-radius: 8px;
+  width: 94%;
+  max-width: 780px;
+  min-width: 290px;
+  margin: 15px auto;
+  border-radius: 6px;
   overflow: hidden;
   background: #0d0d0d;
   border: 1px solid #e50914;
-  box-shadow: 0 0 30px rgba(229, 9, 20, 0.3);
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.35);
   font-family: 'Courier New', monospace;
-  display: flex;
-  flex-direction: column;
 }
 
 .terminal-header {
-  padding: 0.7rem 1rem;
+  padding: 10px 12px;
   display: flex;
   align-items: center;
   background: #141414;
-  border-bottom: 1px solid rgba(229, 9, 20, 0.3);
-  flex-shrink: 0;
+  border-bottom: 1px solid rgba(229, 9, 20, 0.25);
 }
 
 .terminal-buttons {
   display: flex;
-  gap: 8px;
-  margin-right: 12px;
-  pointer-events: none;
+  gap: 6px;
+  margin-right: 10px;
 }
 
 .terminal-btn {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   pointer-events: none;
-  cursor: default;
 }
 
 .btn-red { background: #ff5f56; }
@@ -445,66 +438,54 @@
 
 .terminal-title {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .terminal-body {
-  padding: 1.5rem;
-  flex-grow: 1;
+  padding: 14px;
+  min-height: 140px;
+  max-height: 400px;
   overflow-y: auto;
-  scrollbar-width: none;
-}
-
-.terminal-body::-webkit-scrollbar {
-  display: none;
 }
 
 .terminal-line {
   display: flex;
   color: #e50914;
-  font-size: 1rem;
-  line-height: 1.6;
-  text-shadow: 0 0 8px rgba(229, 9, 20, 0.5);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-shadow: 0 0 6px rgba(229, 9, 20, 0.4);
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   word-break: break-word;
 }
 
 .terminal-prompt {
   color: #27c93f;
-  margin-right: 10px;
+  margin-right: 8px;
   font-weight: bold;
-  flex-shrink: 0;
 }
 
 .terminal-text {
-  font-family: 'Courier New', monospace;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #e50914;
-  text-shadow: 0 0 4px rgba(229, 9, 20, 0.4);
-  letter-spacing: 0.03em;
-  white-space: pre-wrap;
-  line-height: 1.4;
-  padding: 8px 12px;
-  background: rgba(20, 20, 20, 0.7);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  background: rgba(20, 20, 20, 0.65);
   border-radius: 3px;
   border-left: 2px solid #e50914;
-  display: inline-block;
-  overflow-wrap: anywhere;
+  line-height: 1.4;
 }
 
 .terminal-cursor {
   display: inline-block;
-  width: 8px;
-  height: 1.2rem;
+  width: 7px;
+  height: 18px;
   background: #e50914;
-  animation: blink 0.8s infinite;
+  animation: blink 0.9s infinite;
   margin-left: 4px;
-  box-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.6);
 }
 
 @keyframes blink {
@@ -512,57 +493,28 @@
   50% { opacity: 0; }
 }
 
-/* Mobile Screens */
-@media (max-width: 768px) {
+/* Mobile adjustments */
+@media (max-width: 640px) {
   .terminal-container {
-    width: 98vw;
-    margin: 0.5rem auto;
-    border-radius: 6px;
-  }
-
-  .terminal-header {
-    padding: 0.5rem 0.8rem;
+    width: 92%;
+    margin: 12px auto;
   }
 
   .terminal-body {
-    padding: 1rem;
+    padding: 12px;
+    min-height: 120px;
   }
 
   .terminal-text {
-    font-size: 0.8rem;
-    padding: 6px 10px;
+    font-size: 0.84rem;
+    padding: 5px 8px;
   }
 
   .terminal-cursor {
-    height: 1.1rem;
+    height: 16px;
     width: 6px;
   }
 }
-
-/* Tiny Phones */
-@media (max-width: 480px) {
-  .terminal-line {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .terminal-btn {
-    width: 10px;
-    height: 10px;
-  }
-}
-
-        /* Mobile-specific tweaks */
-        @media (max-width: 480px) {
-            .terminal-container {
-                width: 95vw;
-                margin: 0.5rem auto;
-            }
-            .terminal-body {
-                padding: 0.8rem;
-                min-height: 100px;
-            }
-        }
         .hero-buttons {
             display: flex;
             justify-content: center;
