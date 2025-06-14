@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mukoya Khisa | The Engineering Polymath</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <!--CSS LINK-->
+    <link rel="stylesheet" href="main.css">
+
+
+</head>
+<body>
+    <!-- Matrix Background -->
+    <canvas class="matrix-bg" id="matrixCanvas"></canvas>
+
+    <!-- Header with Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">
+                    <span class="text-gradient">SIR. MK</span>
+                </a>
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1 class="hero-title">MUKOYA KHISA</h1>
+
+                <!-- Updated Typing Animation Container -->
+            <div class="terminal-container" id="workingTerminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn btn-red"></span>
+                        <span class="terminal-btn btn-yellow"></span>
+                        <span class="terminal-btn btn-green"></span>
+                    </div>
+                    <span class="terminal-title">mukoya's @portfolio: ~</span>
+                </div>
+                <div class="terminal-body" id="terminalContent">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-text" id="typingText"></span>
+                        <span class="terminal-cursor"></span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-lg">
+                        <i class="fas fa-laptop-code btn-icon"></i>
+                        View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-lg btn-outline">
+                        <i class="fas fa-paper-plane btn-icon"></i>
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <a href="#about" class="hero-scroll">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+
+            <!-- Particles Background -->
+            <div id="particles-js" class="hero-particles"></div>
+        </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+            <p class="section-subtitle">Get to know the engineering polymath seamlessly bridging the worlds of concrete structures and complex code.</p>
+
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="mukoyakhisa.jpg" alt="Mukoya Khisa">
+                </div>
+
+                <div class="about-text" data-aos="fade-left" data-aos-duration="1000">
+                    <h3>The Engineering Polymath</h3>
+                    <p>
+                        I'm Mukoya Khisa, a passionate Civil Engineering student with an insatiable appetite for mathematics and programming.
+                        My journey in tech began when I discovered the power of code to solve complex engineering problems, and I've been
+                        hooked ever since.
+                    </p>
+                    <p>
+                        With expertise in Python, C/C++ programming, and web development, I bridge the gap between engineering and technology.
+                        My LaTeX skills are unmatched, allowing me to create professional technical documents with mathematical precision.
+                    </p>
+                    <p>
+                        When I'm not calculating structural loads or writing code, you'll find me solving advanced mathematical problems
+                        for fun. I believe that mathematics is the language of the universe, and programming is how we make it dance.
+                    </p>
+
+                    <div class="skills-container">
+                        <div class="skills-category">
+                            <h4><i class="fas fa-code"></i> Programming Skills</h4>
+                            <div class="skills-list">
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-python"></i>
+                                    </div>
+                                    <div class="skill-info">
+                                        <h5>Python Development</h5>
+                                        <p>Data analysis, automation, scripting</p>
+                                        <div class="skill-level">
+                                            <div class="skill-level-bar" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-c"></i>
+                                    </div>
+                                    <div class="skill-info">
+                                        <h5>C Programming</h5>
+                                        <p>System programming, algorithms</p>
+                                        <div class="skill-level">
+                                            <div class="skill-level-bar" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-js"></i>
+                                    </div>
+                                    <div class="skill-info">
+                                        <h5>JavaScript</h5>
+                                        <p>Frontend development, web apps</p>
+                                        <div class="skill-level">
+                                            <div class="skill-level-bar" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <div class="skill-info">
+                                        <h5>SQL & Databases</h5>
+                                        <p>Data modeling, optimization</p>
+                                        <div class="skill-level">
+                                            <div class="skill-level-bar" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>Web Development</h4>
+                                        <p>HTML, CSS, JavaScript, React</p>
+                                        <div class="skill-level">
+                                            <div class="skill-level-bar" style="width: 87%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-square-root-alt"></i>
+                                    </div>
+                                    <div class="skill-info">
+                                        <h4>Advanced Mathematics</h4>
+                                        <p>Combinatorics, Number Theory, Advanced Geometry, Advanced Algebra, etc,. </p>
+                                        <div class="skill-level">
+                                            <div class="skill-level-bar" style="width: 94%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills-category">
+                            <h4><i class="fas fa-cogs"></i> Engineering Skills</h4>
+                            <div class="skills-list">
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-calculator"></i>
+                                    </div>
+                                    <div class="skill-info">
+                                        <h5>Structural Analysis</h5>
+                                        <p>Beam, frame, and truss calculations</p>
+                                        <div class="skill-level">
+                                            <div class="skill-level-bar" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                    <div class="skill-info">
+                                        <h5>Fluid Mechanics</h5>
+                                        <p>Hydraulics, pipe flow analysis</p>
+                                        <div class="skill-level">
+                                            <div class="skill-level-bar" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-mountain"></i>
+                                    </div>
+                                    <div class="skill-info">
+                                        <h5>Geotechnical Engineering</h5>
+                                        <p>Soil mechanics, foundation design</p>
+                                        <div class="skill-level">
+                                            <div class="skill-level-bar" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-ruler-combined"></i>
+                                    </div>
+                                    <div class="skill-info">
+                                        <h5>CAD Design</h5>
+                                        <p>AutoCAD, Revit, SketchUp</p>
+                                        <div class="skill-level">
+                                            <div class="skill-level-bar" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats section" id="stats">
+        <div class="container">
+            <h2 class="section-title">By The <span class="text-gradient">Numbers</span></h2>
+            <p class="section-subtitle">Quantifying my expertise through measurable achievements</p>
+
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="stat-number" id="projectsCount">0</div>
+                    <div class="stat-text">Projects Completed</div>
+                </div>
+
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number" id="codingHours">0</div>
+                    <div class="stat-text">Hours Coding</div>
+                </div>
+
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-number" id="latexDocs">0</div>
+                    <div class="stat-text">LaTeX Documents</div>
+                </div>
+
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-square-root-alt"></i>
+                    </div>
+                    <div class="stat-number" id="mathProblems">0</div>
+                    <div class="stat-text">Math Problems Solved</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="projects-shape"></div>
+
+                <div class="container">
+                <h2 class="section-title">My <span class="text-gradient">Projects</span></h2>
+                <p class="section-subtitle">A showcase of my work at the intersection of engineering and technology</p>
+
+
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="engineering">Engineering</button>
+                    <button class="filter-btn" data-filter="programming">Programming</button>
+                    <button class="filter-btn" data-filter="mathematics">Mathematics</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-category="engineering">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Structural Analysis Tool">
+                            <div class="project-badge">Featured</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Structural Analysis Tool</h3>
+                            <p class="project-description">
+                                A comprehensive Python application for analyzing beam deflections, stress distributions, and load capacities with graphical output and automated reporting. Incorporates finite element analysis for complex structures.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">NumPy</span>
+                                <span class="project-tag">Matplotlib</span>
+                                <span class="project-tag">FEA</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="AHS Math Club Website">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AHS Math Club Website</h3>
+                            <p class="project-description">
+                                Official website for The Alliance High School Math Club featuring event calendars, competition resources,
+                                interactive problem sets, and member portal. Designed to promote mathematical engagement school-wide.
+                            </p>
+                            <p>THOUGH IT IS STILL IN DEVELOPMENT,</p>
+                            <div class="project-tags">
+                                <span class="project-tag">HTML/CSS/JavaScript</span>
+                                <span class="project-tag">Python (Django)</span>
+                                <span class="project-tag">Three.js</span>
+                                <span class="project-tag">SQLite</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://mkcoder729.github.io/ahs-mathc2023/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-category="mathematics">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1132&q=80" alt="Math Visualization Platform">
+                            <div class="project-badge">New</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Math Visualization Platform</h3>
+                            <p class="project-description">
+                                Interactive web app for visualizing complex mathematical concepts in 3D using Three.js. Features include real-time graphing, vector field visualization, and differential equation solvers with animated solutions.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">Three.js</span>
+                                <span class="project-tag">WebGL</span>
+                                <span class="project-tag">MathJS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card" data-category="programming">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="LaTeX Thesis Template">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">LaTeX Thesis Template</h3>
+                            <p class="project-description">
+                                Professional academic template with automated formatting, bibliography management, and mathematical notation. Includes custom commands for engineering symbols and automated figure/table numbering with cross-referencing.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">LaTeX</span>
+                                <span class="project-tag">BibTeX</span>
+                                <span class="project-tag">Academic</span>
+                                <span class="project-tag">Publishing</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i> View Template</a>
+                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card" data-category="engineering">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Construction Management System">
+                            <div class="project-badge">Popular</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Construction Management System</h3>
+                            <p class="project-description">
+                                Web-based project management tool for construction sites with real-time progress tracking, resource allocation, and automated reporting. Integrates with IoT sensors for material tracking and environmental monitoring.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">MongoDB</span>
+                                <span class="project-tag">IoT</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card" data-category="programming">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Algorithm Visualizer">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Algorithm Visualizer</h3>
+                            <p class="project-description">
+                                Interactive tool that demonstrates how sorting and pathfinding algorithms work step-by-step. Includes educational explanations, performance comparisons, and the ability to modify parameters in real-time.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">C</span>
+                                <span class="project-tag">Algorithms</span>
+                                <span class="project-tag">Data Structures</span>
+                                <span class="project-tag">Visualization</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <h2 class="section-title">My <span class="text-gradient">Services</span></h2>
+            <p class="section-subtitle">Bridging engineering and technology to create innovative solutions</p>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="service-title">Engineering Calculations</h3>
+                    <p class="service-description">
+                        Custom Python scripts for structural analysis, fluid dynamics, and other engineering calculations. Automated reporting with LaTeX integration for professional documentation.
+                    </p>
+                    <div class="service-price">From $150</div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Programming Solutions</h3>
+                    <p class="service-description">
+                        Efficient C and Python programs for data processing, automation, and algorithm implementation. Optimized code with detailed documentation and testing.
+                    </p>
+                    <div class="service-price">From $200</div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">
+                        Responsive, modern websites and web applications with clean code and intuitive interfaces. Specializing in technical and engineering applications.
+                    </p>
+                    <div class="service-price">From $500</div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="service-title">LaTeX Document Preparation</h3>
+                    <p class="service-description">
+                        Professional typesetting for academic papers, theses, and technical documentation. Custom templates and automated formatting for consistent styling.
+                    </p>
+                    <div class="service-price">From $100</div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Data Analysis</h3>
+                    <p class="service-description">
+                        Statistical analysis, data visualization, and interpretation for research and business. Custom reports with actionable insights and recommendations.
+                    </p>
+                    <div class="service-price">From $250</div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="service-title">Math Tutoring</h3>
+                    <p class="service-description">
+                        Advanced mathematics tutoring from calculus to linear algebra and beyond. Customized lessons with practical applications to engineering problems.
+                    </p>
+                    <div class="service-price">From $50/hr</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="testimonials-shape"></div>
+
+            <div class="container">
+                <h2 class="section-title">What <span class="text-gradient">People Say</span></h2>
+                <p class="section-subtitle">Hear from clients, colleagues, and professors about my work</p>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Sarah Stephanie" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author">Dr. Sarah Stephanie</h4>
+                            <p class="testimonial-role">Professor of Civil Engineering, University of Nairobi</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">
+                        Mukoya's mathematical insight is extraordinary. He solved complex structural problems for our research project that had stumped our team for weeks. His ability to translate engineering challenges into computational solutions is unmatched among students I've worked with.
+                    </p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Felix Ochieng'" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author">Felix Ochieng'</h4>
+                            <p class="testimonial-role">Project Manager, BuildRight Constructions</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">
+                        The construction management system Mukoya developed streamlined our operations and reduced project delays by 30%. His technical skills are matched only by his understanding of engineering workflows. We've since hired him for three additional projects.
+                    </p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Esther Naliaka" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author">Esther Naliaka</h4>
+                            <p class="testimonial-role">MSc Civil Engineering Student</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">
+                        As a fellow student, I've seen Mukoya explain complex mathematical concepts with such clarity that they become simple. His LaTeX templates made my thesis look professional with minimal effort. He's the go-to person in our department for both coding and math help.
+                    </p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Walter Adhing'a" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author">Walter Adhing'a</h4>
+                            <p class="testimonial-role">Research Scientist, Kenya Institute of Technology</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">
+                        Mukoya's algorithm optimization reduced our simulation runtime from 8 hours to 45 minutes. His deep understanding of both the mathematical foundations and practical implementation was crucial to our research project's success.
+                    </p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Grace Wambui" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author">Collins Kurgat</h4>
+                            <p class="testimonial-role">CTO, TechSolutions Africa</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">
+                        Working with Mukoya on our engineering software project was a game-changer. His ability to bridge the gap between complex mathematical models and practical software implementation saved us months of development time.
+                    </p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Grace Wambui" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author">Grace Wambui</h4>
+                            <p class="testimonial-role">Senior Developer, Nairobi Tech Hub</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">
+                        Mukoya's structural analysis tool has become essential in our engineering workflows. His combination of mathematical rigor and clean code implementation makes his work stand out in our organization.
+                    </p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
+                <p class="section-subtitle">Have a project in mind or want to discuss potential collaboration? Reach out to me!</p>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item" data-aos="fade-right" data-aos-delay="100">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Location</h3>
+                                <p>Eldoret, Kenya</p>
+                                <p>Available for remote work countrywide</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <a href="mailto:sir.mukoyakhisa@gmail.com">sir.mukoyakhisa@gmail.com</a>
+                                <p>Typically responds within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-aos="fade-right" data-aos-delay="300">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <a href="tel:+254752392314">+254 752 392 314</a>
+                                <p>Available Mon-Fri, 9am-5pm EAT</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-aos="fade-right" data-aos-delay="400">
+                            <div class="contact-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Social Media</h3>
+                                <p>Connect with me on these platforms</p>
+                                <div class="social-links">
+                                    <a href="https://github.com/mkcoder729" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/sir-mukoya-khisa" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://twitter.com/sir_khisa" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://instagram.com/the_sir._k" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form" data-aos="fade-left" data-aos-delay="500">
+                                  <form action="https://formsubmit.co/sir.mukoyakhisa@gmail.com" method="POST">
+                                        <!-- FormSubmit Configuration -->
+                                        <input type="hidden" name="_next" value="https://mkcoder729.github.io/just-my-portfolio/thanks.html">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_template" value="table">
+                                        <input type="hidden" name="_subject" value="New Message From Portfolio">
+                                        <input type="text" name="_honey" style="display:none"> <!-- Anti-spam field -->
+
+                                <!-- Form Fields with Validation -->
+                                <div class="form-group">
+                                  <label for="name">Your Name</label>
+                                  <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    class="form-control"
+                                    required
+                                    minlength="2"
+                                    maxlength="50"
+                                    placeholder="Enter your name (2-50 characters)"
+                                  >
+                                  <div class="invalid-feedback">Name must be 2-50 characters long.</div>
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="email">Your Email</label>
+                                  <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-control"
+                                    required
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    placeholder="Enter a valid email (e.g., user@example.com)"
+                                  >
+                                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="subject">Subject</label>
+                                  <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    class="form-control"
+                                    required
+                                    minlength="5"
+                                    maxlength="100"
+                                    placeholder="Subject (5-100 characters)"
+                                  >
+                                  <div class="invalid-feedback">Subject must be 5-100 characters long.</div>
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="message">Your Message</label>
+                                  <textarea
+                                    id="message"
+                                    name="message"
+                                    class="form-control"
+                                    required
+                                    minlength="10"
+                                    maxlength="2000"
+                                    rows="5"
+                                    placeholder="Message (10-2000 characters)"
+                                  ></textarea>
+                                  <div class="invalid-feedback">Message must be 10-2000 characters long.</div>
+                                </div>
+
+                                <!-- reCAPTCHA (I will replace with my site key)
+                                <div class="form-group">
+                                  <div class="g-recaptcha" data-sitekey="6LfvJ1wrAAAAAOlvJlE8SaG5MvOYScgU0EB98a6f"></div>
+                                  <div id="recaptcha-error" class="invalid-feedback">Please complete the reCAPTCHA.</div>
+                                </div> -->
+
+                                <button type="submit" class="btn btn-lg form-submit">
+                                  <i class="fas fa-paper-plane btn-icon"></i> Send Message
+                                </button>
+                              </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">MK</a>
+                <p class="footer-text">
+                    Bridging the gap between engineering and technology through innovative solutions and mathematical precision.
+                </p>
+
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#stats">Stats</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#services">Services</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://github.com/mkcoder729"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sir-mukoya-khisa"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/sir_khisa"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/the_sir._k"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-stack-overflow"></i></a>
+                </div>
+
+                <p class="footer-copyright">
+                    &copy; 2025 <span class="text-gradient">Mukoya Khisa</span>. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbox -->
+    <div class="chatbox-container">
+        <button class="chatbox-toggle" id="chatboxToggle">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div class="chatbox" id="chatbox">
+            <div class="chatbox-header">
+                <h3>MK Assistant</h3>
+                <button class="chatbox-close" id="chatboxClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbox-messages" id="chatboxMessages"></div>
+            <div class="chatbox-input">
+                <input type="text" id="chatboxInput" placeholder="Type your message...">
+                <button id="chatboxSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+                 <!--JavaScript Link -->
+            <script src="main.js"></script>
+
+
+</body>
+</html>
