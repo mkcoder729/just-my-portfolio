@@ -17,12 +17,25 @@
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+        <!-- Preload key resources -->
+    <link rel="preload" href="your-main-font.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Force GPU acceleration for smooth animations -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+    <!-- Disable unwanted mobile behaviors -->
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
 
     <!--CSS LINK-->
     <link rel="stylesheet" href="main.css">
 
 
 </head>
+
 <body>
     <!-- Matrix Background -->
     <canvas class="matrix-bg" id="matrixCanvas"></canvas>
@@ -603,10 +616,10 @@
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Esther Naliaka" class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Rose Cherop" class="testimonial-avatar">
                         <div class="testimonial-author-info">
-                            <h4 class="testimonial-author">Esther Naliaka</h4>
-                            <p class="testimonial-role">MSc Civil Engineering Student</p>
+                            <h4 class="testimonial-author">Rose Cherop</h4>
+                            <p class="testimonial-role">MSc Mechanical Engineering Student</p>
                         </div>
                     </div>
                     <p class="testimonial-quote">
