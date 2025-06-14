@@ -135,15 +135,15 @@
 
                     // YOUR COMPLETE ORIGINAL LINES ARRAY (UNTOUCHED)
                     const lines = [
-                            { text: ">>> Why do Python developers need glasses? >>.....>> Because they can't C!", delay: 300, isOutput: true },
-                            { text: "Welcome to Mukoya Khisa's 1337 Terminal", delay: 400 },
-                            { text: "Initializing... (Warning: Contains 99.999% pure computational awesomeness)", delay: 500 },
+                            { text: ">>> Why do Python developers need glasses? >>----->>----->> Because they can't C!", delay: 300, isOutput: true },
+                            { text: "Welcome to Mukoya Khisa's 1337 Terminal.", delay: 400 },
+                            { text: "Initializing... (Warning: Contains 99.999% pure computational awesomeness).", delay: 500 },
                             { text: "def display_credentials():", type: "code", class: "code-keyword", delay: 600 },
                             { text: "    print('Civil Engineering Student | Python & C/C++ Developer')", type: "code", class: "code-string", delay: 100 },
-                            { text: "    print('Web Development Master | LaTeX Guru | Mathematics Beast')", type: "code", class: "code-string", delay: 100 },
-                            { text: ">>> My IDE: 1% writing code 99% fixing my own typos", delay: 300, isOutput: true },
-                            { text: ">>> I don't use exceptions - I AM the exception", delay: 300, isOutput: true },
-                            { text: "// SYSTEM: This terminal just segfaulted from sheer brilliance", type: "code", class: "code-error", delay: 400 }
+                            { text: "    print('Web Development Master | LaTeX Guru | Mathematics Beast.')", type: "code", class: "code-string", delay: 100 },
+                            { text: ">>> My IDE: 1% writing code 99% fixing my own typos.", delay: 300, isOutput: true },
+                            { text: ">>> I don't use exceptions - I AM the exception 😎.", delay: 300, isOutput: true },
+                            { text: "// Warning 💀💀💀: Exposure to this portfolio may cause intense hiring urges!!! 😁.", type: "code", class: "code-comment", delay: 300 }
                         ];
 
                     let currentLineIndex = 0;
@@ -204,6 +204,8 @@
                                     terminalContent.appendChild(finalLine);
                                     isTyping = false;
                                     setTimeout(startTyping, 1000);
+
+
                                 }
                             }
                         }
