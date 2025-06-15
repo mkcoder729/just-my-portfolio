@@ -135,7 +135,7 @@
 
                     // YOUR COMPLETE ORIGINAL LINES ARRAY (UNTOUCHED)
                     const lines = [
-                            { text: ">>> Why do Python developers need glasses? >>----->>----->> Because they can't C!", delay: 300, isOutput: true },
+                            { text: ">>> Why do Python developers need glasses? ---------- Because they can't C!", delay: 300, isOutput: true },
                             { text: "Welcome to Mukoya Khisa's 1337 Terminal.", delay: 400 },
                             { text: "Initializing... (Warning: Contains 99.999% pure computational awesomeness).", delay: 500 },
                             { text: "def display_credentials():", type: "code", class: "code-keyword", delay: 600 },
@@ -284,14 +284,36 @@
 
             // Initialize counters when stats section is in view
             const statsSection = document.getElementById('stats');
-            const statsObserver = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting) {
-                    animateCounters();
-                    statsObserver.unobserve(statsSection);
-                }
-            }, { threshold: 0.5 });
+            let hasAnimated = false;
 
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        animateCounters();
+                        hasAnimated = true;
+                    } else if (!entry.isIntersecting) {
+                        hasAnimated = false; // Reset when section leaves view
+                    }
+                });
+            }, {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px' // Triggers 100px before entering viewport
+            });
+
+            // Start observing
             statsObserver.observe(statsSection);
+
+            // Reset on page refresh
+            window.addEventListener('beforeunload', () => {
+                hasAnimated = false;
+            });
+
+            // Optional: Force reset when scrolling back up
+            window.addEventListener('scroll', () => {
+                if (window.scrollY < statsSection.offsetTop - window.innerHeight) {
+                    hasAnimated = false;
+                }
+            }, { passive: true });
 
 
             // Matrix Background with Mouse Interaction
@@ -831,5 +853,72 @@
             }
           });
         });
+
+            // ⚡ HYPER-PERFORMANCE INITIALIZATION
+            document.addEventListener('DOMContentLoaded', () => {
+              // 1. FORCE GPU GOD MODE
+              document.querySelectorAll('*').forEach(el => {
+                el.style.willChange = 'transform, opacity, filter';
+                el.style.transform = 'translate3d(0,0,0)';
+                el.style.backfaceVisibility = 'hidden';
+                el.style.perspective = '1000px';
+              });
+
+              // 2. PRECISION HOVER PRIME
+              const hoverElements = document.querySelectorAll('a, button, [class], [hover]');
+              hoverElements.forEach(el => {
+                el.style.transition = 'all 0.16s cubic-bezier(0.45, 0, 0.55, 1)';
+                el.dataset.hoverPrime = 'ready';
+              });
+
+              // 3. SCROLL PHASER (60FPS LOCK)
+              const scroller = () => {
+                window.requestAnimationFrame(() => {
+                  document.documentElement.style.setProperty(
+                    '--scroll-y',
+                    `${window.scrollY}px`
+                  );
+                  scroller();
+                });
+              };
+              scroller();
+
+              // 4. HOVER PREDICTION ENGINE
+              let lastX, lastY;
+              document.addEventListener('mousemove', (e) => {
+                [lastX, lastY] = [e.clientX, e.clientY];
+                const hoverTarget = document.elementFromPoint(lastX, lastY);
+                if (hoverTarget) {
+                  hoverTarget.classList.add('hyper-hover');
+                  setTimeout(() => hoverTarget.classList.remove('hyper-hover'), 100);
+                }
+              }, { passive: true });
+
+              // 5. ANIMATION QUANTUM CHANNEL
+              const animate = (time) => {
+                document.querySelectorAll('[data-animate]').forEach(el => {
+                  el.style.transform = `translateY(${Math.sin(time/600) * 5}px)`;
+                });
+                requestAnimationFrame(animate);
+              };
+              animate(0);
+            });
+
+            // 6. CRITICAL CSS INJECTOR
+            const criticalCSS = `
+              .hyper-hover {
+                transform: scale(1.05) !important;
+                filter: brightness(1.2) !important;
+                transition-duration: 0.01s !important;
+              }
+              * {
+                scroll-behavior: smooth !important;
+                image-rendering: -webkit-optimize-contrast !important;
+              }
+            `;
+            document.head.insertAdjacentHTML('beforeend', `<style>${criticalCSS}</style>`);
+
+
+
 
 
