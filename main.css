@@ -27,6 +27,70 @@
             transition-duration: 0.01ms !important;
           }
         }
+                /* ===== SMOOTH HOVER EFFECTS FOR ENTIRE WEBSITE ===== */
+        /* 1. Enable GPU acceleration for all interactive elements */
+        a, button, .hover-effect, [class*="hover"] {
+          transform: translateZ(0);
+          backface-visibility: hidden;
+        }
+
+        /* 2. Optimize transitions */
+        * {
+          transition:
+            transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+            opacity 0.3s ease,
+            box-shadow 0.3s ease;
+        }
+
+        /* 3. Force hardware acceleration for complex animations */
+        @media (hover: hover) {
+          .card, .menu-item, .gallery-item {
+            will-change: transform, opacity;
+            transform-style: preserve-3d;
+          }
+        }
+
+        /* 4. Disable hover effects on touch devices */
+        @media (hover: none) {
+          * {
+            transition: none !important;
+            transform: none !important;
+          }
+        }
+
+        /* ⚡ ATOMIC SMOOTHNESS */
+        html {
+          scroll-behavior: smooth;
+        }
+
+
+        body {
+          perspective: 1000px;
+          transform-style: preserve-3d;
+        }
+
+        * {
+          will-change: transform, opacity, filter;
+          backface-visibility: hidden;
+          transform: translate3d(0,0,0);
+          animation-play-state: running !important;
+        }
+
+        @media (hover: hover) {
+          a, button, [hover] {
+            transition:
+              transform 0.12s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.1s linear,
+              box-shadow 0.15s ease-out !important;
+          }
+        }
+
+        /* 🚀 HYPER-HOVER STATES */
+        a:hover, button:hover, [hover]:hover {
+          transform: scale(1.02) translateZ(50px) !important;
+          filter: drop-shadow(0 2px 8px rgba(229,9,20,0.3)) !important;
+          z-index: 9999 !important;
+        }
         /* ===== Global Styles & Variables ===== */
         :root {
             --netflix-red: #e50914;
@@ -870,7 +934,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .projects-shape {
             position: absolute;
             top: 20%;
@@ -882,7 +946,7 @@
             opacity: 0.15;
             z-index: 0;
         }
-        
+
         .section-header {
             text-align: center;
             margin-bottom: 3.75rem;
@@ -890,7 +954,7 @@
             z-index: 1;
             padding: 0 1rem;
         }
-        
+
         .section-title {
             font-size: clamp(1.8rem, 5vw, 2.8rem);
             color: #fff;
@@ -898,14 +962,14 @@
             font-weight: 700;
             padding: 0 1rem;
         }
-        
+
         .text-gradient {
             background: linear-gradient(135deg, #e50914, #b00710);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        
+
         .section-header p {
             color: rgba(255, 255, 255, 0.7);
             font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -914,7 +978,7 @@
             line-height: 1.6;
             padding: 0 1rem;
         }
-        
+
         /* Filter Buttons */
         .filter-container {
             display: flex;
@@ -926,7 +990,7 @@
             z-index: 100;
             padding: 0 1rem;
         }
-        
+
         .filter-btn {
             background: rgba(255, 255, 255, 0.08);
             color: rgba(255, 255, 255, 0.9);
@@ -939,12 +1003,12 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .filter-btn:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
-        
+
         .filter-btn.active {
             background: #e50914;
             color: white;
@@ -952,7 +1016,7 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
         }
-        
+
         /* Projects Grid - ONLY CHANGED THIS PART */
         .projects-grid {
             display: grid;
@@ -963,7 +1027,7 @@
             z-index: 1;
             justify-content: center; /* Added this line */
         }
-        
+
         .project-card {
             background: #1a1a1a;
             border-radius: 12px;
@@ -978,29 +1042,29 @@
             width: 100%;
             max-width: 500px;
         }
-        
+
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 35px rgba(229, 9, 20, 0.25);
         }
-        
+
         .project-image {
             height: 220px;
             overflow: hidden;
             position: relative;
         }
-        
+
         .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
-        
+
         .project-card:hover .project-image img {
             transform: scale(1.05);
         }
-        
+
         .project-badge {
             position: absolute;
             top: 15px;
@@ -1013,21 +1077,21 @@
             font-weight: 600;
             z-index: 2;
         }
-        
+
         .project-content {
             padding: 1.5625rem;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
-        
+
         .project-title {
             font-size: clamp(1.3rem, 3vw, 1.6rem);
             color: white;
             margin-bottom: 0.9375rem;
             font-weight: 700;
         }
-        
+
         .project-description {
             color: rgba(255, 255, 255, 0.85);
             font-size: clamp(0.9rem, 2vw, 1rem);
@@ -1035,14 +1099,14 @@
             margin-bottom: 1.25rem;
             flex: 1;
         }
-        
+
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.625rem;
             margin-bottom: 1.25rem;
         }
-        
+
         .project-tag {
             background: rgba(229, 9, 20, 0.2);
             color: #e50914;
@@ -1052,17 +1116,17 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
+
         .project-card:hover .project-tag {
             background: rgba(229, 9, 20, 0.3);
         }
-        
+
         .project-links {
             display: flex;
             gap: 1.25rem;
             margin-top: auto;
         }
-        
+
         .project-links a {
             color: white;
             font-size: clamp(0.9rem, 2vw, 1rem);
@@ -1072,35 +1136,35 @@
             gap: 0.5rem;
             transition: all 0.3s ease;
         }
-        
+
         .project-links a:hover {
             color: #e50914;
             transform: translateX(3px);
         }
-        
+
         .project-links i {
             font-size: 1.1rem;
         }
-        
+
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             #projects {
                 padding: 4rem 0;
             }
-        
+
             .projects-grid {
                 gap: 1.5rem;
             }
-        
+
             .filter-container {
                 gap: 0.75rem;
             }
-        
+
             .filter-btn {
                 padding: 0.6rem 1.2rem;
             }
         }
-        
+
         /* Filtered state - ADDED THIS */
         .project-card.hidden {
             display: none;
