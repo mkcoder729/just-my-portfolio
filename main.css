@@ -64,6 +64,7 @@
         }
 
 
+
         body {
           perspective: 1000px;
           transform-style: preserve-3d;
@@ -405,7 +406,7 @@
         .hero {
             height: 100vh;
             min-height: 700px;
-            background: url('https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1132&q=80') no-repeat center center/cover;
+            background: linear-gradient(90deg, rgba(0, 5, 5, 0.7), rgba(0, 4, 2, 0.6)), url('https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1132&q=80') no-repeat center center/cover;
             position: relative;
             display: flex;
             align-items: center;
