@@ -21,6 +21,8 @@
     <link rel="preload" href="your-main-font.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
 
     <!-- Force GPU acceleration for smooth animations -->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
@@ -28,6 +30,10 @@
     <!-- Disable unwanted mobile behaviors -->
     <meta name="theme-color" content="#0a0a0a">
     <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- In <head> -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
 
     <!--CSS LINK-->
@@ -326,11 +332,9 @@
         <!-- Projects Section -->
         <section id="projects">
             <div class="projects-shape"></div>
-
-                <div class="container">
+            <div class="container">
                 <h2 class="section-title">My <span class="text-gradient">Projects</span></h2>
                 <p class="section-subtitle">A showcase of my work at the intersection of engineering and technology</p>
-
 
                 <div class="filter-container">
                     <button class="filter-btn active" data-filter="all">All Projects</button>
@@ -344,7 +348,13 @@
                     <!-- Project 1 -->
                     <div class="project-card" data-category="engineering">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Structural Analysis Tool">
+                            <img
+                                data-src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                class="lazy"
+                                alt="Structural Analysis Tool"
+                                width="1170"
+                                height="780"
+                            >
                             <div class="project-badge">Featured</div>
                         </div>
                         <div class="project-content">
@@ -368,7 +378,13 @@
                     <!-- Project 2 -->
                     <div class="project-card" data-category="web">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="AHS Math Club Website">
+                            <img
+                                data-src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                class="lazy"
+                                alt="AHS Math Club Website"
+                                width="1170"
+                                height="780"
+                            >
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">AHS Math Club Website</h3>
@@ -393,7 +409,13 @@
                     <!-- Project 3 -->
                     <div class="project-card" data-category="mathematics">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1132&q=80" alt="Math Visualization Platform">
+                            <img
+                                data-src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1132&q=80"
+                                class="lazy"
+                                alt="Math Visualization Platform"
+                                width="1132"
+                                height="754"
+                            >
                             <div class="project-badge">New</div>
                         </div>
                         <div class="project-content">
@@ -417,7 +439,13 @@
                     <!-- Project 4 -->
                     <div class="project-card" data-category="programming">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="LaTeX Thesis Template">
+                            <img
+                                data-src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                class="lazy"
+                                alt="LaTeX Thesis Template"
+                                width="1170"
+                                height="780"
+                            >
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">LaTeX Thesis Template</h3>
@@ -440,7 +468,13 @@
                     <!-- Project 5 -->
                     <div class="project-card" data-category="engineering">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Construction Management System">
+                            <img
+                                data-src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80"
+                                class="lazy"
+                                alt="Construction Management System"
+                                width="1169"
+                                height="779"
+                            >
                             <div class="project-badge">Popular</div>
                         </div>
                         <div class="project-content">
@@ -464,7 +498,13 @@
                     <!-- Project 6 -->
                     <div class="project-card" data-category="programming">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Algorithm Visualizer">
+                            <img
+                                data-src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                class="lazy"
+                                alt="Algorithm Visualizer"
+                                width="1170"
+                                height="780"
+                            >
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Algorithm Visualizer</h3>
@@ -480,34 +520,40 @@
                             <div class="project-links">
                                 <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                                 <a href="#"><i class="fab fa-github"></i> Source Code</a>
-                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Project 7 -->
-                        <div class="project-card" data-category="engineering">
-                            <div class="project-image">
-                                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Engineering Calculator Suite">
+                    <!-- Project 7 -->
+                    <div class="project-card" data-category="engineering">
+                        <div class="project-image">
+                            <img
+                                data-src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80"
+                                class="lazy"
+                                alt="Engineering Calculator Suite"
+                                width="1171"
+                                height="780"
+                            >
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Engineering Calculator Suite</h3>
+                            <p class="project-description">
+                                Comprehensive collection of engineering calculators for structural, geotechnical, and fluid mechanics applications. Features unit conversion, material property databases, and exportable calculation reports.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">PyQt</span>
+                                <span class="project-tag">Engineering</span>
+                                <span class="project-tag">Calculations</span>
                             </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Engineering Calculator Suite</h3>
-                                <p class="project-description">
-                                    Comprehensive collection of engineering calculators for structural, geotechnical, and fluid mechanics applications. Features unit conversion, material property databases, and exportable calculation reports.
-                                </p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Python</span>
-                                    <span class="project-tag">PyQt</span>
-                                    <span class="project-tag">Engineering</span>
-                                    <span class="project-tag">Calculations</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                    <a href="#"><i class="fab fa-github"></i> Source Code</a>
-                                </div>
+                            <div class="project-links">
+                                <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
 
@@ -521,73 +567,73 @@
                 <!-- Service 1 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon">
-                        <i class="fas fa-calculator"></i>
+                        <i class="fas fa-calculator" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">Engineering Calculations</h3>
                     <p class="service-description">
                         Custom Python scripts for structural analysis, fluid dynamics, and other engineering calculations. Automated reporting with LaTeX integration for professional documentation.
                     </p>
-                    <div class="service-price">From $150</div>
+                    <div class="service-price" aria-live="polite">From $150</div>
                 </div>
 
                 <!-- Service 2 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-code" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">Programming Solutions</h3>
                     <p class="service-description">
                         Efficient C and Python programs for data processing, automation, and algorithm implementation. Optimized code with detailed documentation and testing.
                     </p>
-                    <div class="service-price">From $200</div>
+                    <div class="service-price" aria-live="polite">From $200</div>
                 </div>
 
                 <!-- Service 3 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-laptop-code" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">Web Development</h3>
                     <p class="service-description">
                         Responsive, modern websites and web applications with clean code and intuitive interfaces. Specializing in technical and engineering applications.
                     </p>
-                    <div class="service-price">From $500</div>
+                    <div class="service-price" aria-live="polite">From $500</div>
                 </div>
 
                 <!-- Service 4 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon">
-                        <i class="fas fa-file-alt"></i>
+                        <i class="fas fa-file-alt" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">LaTeX Document Preparation</h3>
                     <p class="service-description">
                         Professional typesetting for academic papers, theses, and technical documentation. Custom templates and automated formatting for consistent styling.
                     </p>
-                    <div class="service-price">From $100</div>
+                    <div class="service-price" aria-live="polite">From $100</div>
                 </div>
 
                 <!-- Service 5 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">Data Analysis</h3>
                     <p class="service-description">
                         Statistical analysis, data visualization, and interpretation for research and business. Custom reports with actionable insights and recommendations.
                     </p>
-                    <div class="service-price">From $250</div>
+                    <div class="service-price" aria-live="polite">From $250</div>
                 </div>
 
                 <!-- Service 6 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="service-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-brain" aria-hidden="true"></i>
                     </div>
                     <h3 class="service-title">Math Tutoring</h3>
                     <p class="service-description">
                         Advanced mathematics tutoring from calculus to linear algebra and beyond. Customized lessons with practical applications to engineering problems.
                     </p>
-                    <div class="service-price">From $50/hr</div>
+                    <div class="service-price" aria-live="polite">From $50/hr</div>
                 </div>
             </div>
         </div>
@@ -597,17 +643,22 @@
     <section id="testimonials">
         <div class="testimonials-shape"></div>
 
-            <div class="container">
-                <h2 class="section-title">What <span class="text-gradient">People Say</span></h2>
-                <p class="section-subtitle">Hear from clients, colleagues, and professors about my work</p>
+        <div class="container">
+            <h2 class="section-title">What <span class="text-gradient">People Say</span></h2>
+            <p class="section-subtitle">Hear from clients, colleagues, and professors about my work</p>
 
             <div class="testimonials-grid">
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Sarah Johnson" class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                             alt="Dr. Sarah Stephanie"
+                             class="testimonial-avatar"
+                             loading="lazy"
+                             width="60"
+                             height="60">
                         <div class="testimonial-author-info">
-                            <h4 class="testimonial-author">Dr. Sarah Johnson</h4>
+                            <h4 class="testimonial-author">Dr. Sarah Stephanie</h4>
                             <p class="testimonial-role">Professor of Civil Engineering, University of Nairobi</p>
                         </div>
                     </div>
@@ -622,7 +673,12 @@
                 <!-- Testimonial 2 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
                     <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Felix Ochieng'" class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                             alt="Felix Ochieng'"
+                             class="testimonial-avatar"
+                             loading="lazy"
+                             width="60"
+                             height="60">
                         <div class="testimonial-author-info">
                             <h4 class="testimonial-author">Felix Ochieng'</h4>
                             <p class="testimonial-role">Project Manager, BuildRight Constructions</p>
@@ -639,10 +695,15 @@
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Rose Cherop" class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg"
+                             alt="Esther Naliaka"
+                             class="testimonial-avatar"
+                             loading="lazy"
+                             width="60"
+                             height="60">
                         <div class="testimonial-author-info">
-                            <h4 class="testimonial-author">Rose Cherop</h4>
-                            <p class="testimonial-role">MSc Mechanical Engineering Student</p>
+                            <h4 class="testimonial-author">Esther Naliaka</h4>
+                            <p class="testimonial-role">MSc Civil Engineering Student</p>
                         </div>
                     </div>
                     <p class="testimonial-quote">
@@ -656,7 +717,12 @@
                 <!-- Testimonial 4 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Walter Adhing'a" class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg"
+                             alt="Walter Adhing'a"
+                             class="testimonial-avatar"
+                             loading="lazy"
+                             width="60"
+                             height="60">
                         <div class="testimonial-author-info">
                             <h4 class="testimonial-author">Walter Adhing'a</h4>
                             <p class="testimonial-role">Research Scientist, Kenya Institute of Technology</p>
@@ -673,7 +739,12 @@
                 <!-- Testimonial 5 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Nelson Mandela" class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                             alt="Grace Wambui"
+                             class="testimonial-avatar"
+                             loading="lazy"
+                             width="60"
+                             height="60">
                         <div class="testimonial-author-info">
                             <h4 class="testimonial-author">Collins Kurgat</h4>
                             <p class="testimonial-role">CTO, TechSolutions Africa</p>
@@ -690,9 +761,14 @@
                 <!-- Testimonial 6 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="350">
                     <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Nelson Mandela" class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/63.jpg"
+                             alt="Grace Wambui"
+                             class="testimonial-avatar"
+                             loading="lazy"
+                             width="60"
+                             height="60">
                         <div class="testimonial-author-info">
-                            <h4 class="testimonial-author">Nelson Mandela</h4>
+                            <h4 class="testimonial-author">Grace Wambui</h4>
                             <p class="testimonial-role">Senior Developer, Nairobi Tech Hub</p>
                         </div>
                     </div>
@@ -706,149 +782,141 @@
             </div>
         </div>
     </section>
-
         <!-- Contact Section -->
-        <section class="contact section" id="contact">
-            <div class="container">
-                <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
-                <p class="section-subtitle">Have a project in mind or want to discuss potential collaboration? Reach out to me!</p>
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
+            <p class="section-subtitle">Have a project in mind or want to discuss potential collaboration? Reach out to me!</p>
 
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <div class="contact-item" data-aos="fade-right" data-aos-delay="100">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Location</h3>
-                                <p>Eldoret, Kenya</p>
-                                <p>Available for remote work countrywide</p>
-                            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="100">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-
-                        <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Email</h3>
-                                <a href="mailto:sir.mukoyakhisa@gmail.com">sir.mukoyakhisa@gmail.com</a>
-                                <p>Typically responds within 24 hours</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item" data-aos="fade-right" data-aos-delay="300">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Phone</h3>
-                                <a href="tel:+254752392314">+254 752 392 314</a>
-                                <p>Available Mon-Fri, 9am-5pm EAT</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item" data-aos="fade-right" data-aos-delay="400">
-                            <div class="contact-icon">
-                                <i class="fas fa-share-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Social Media</h3>
-                                <p>Connect with me on these platforms</p>
-                                <div class="social-links">
-                                    <a href="https://github.com/mkcoder729" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/sir-mukoya-khisa" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://twitter.com/sir_khisa" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://instagram.com/the_sir._k" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Eldoret, Kenya</p>
+                            <p>Available for remote work countrywide</p>
                         </div>
                     </div>
 
-                    <div class="contact-form" data-aos="fade-left" data-aos-delay="500">
-                                  <form action="https://formsubmit.co/sir.mukoyakhisa@gmail.com" method="POST">
-                                        <!-- FormSubmit Configuration -->
-                                        <input type="hidden" name="_next" value="https://mkcoder729.github.io/just-my-portfolio/thanks.html">
-                                        <input type="hidden" name="_captcha" value="false">
-                                        <input type="hidden" name="_template" value="table">
-                                        <input type="hidden" name="_subject" value="New Message From Portfolio">
-                                        <input type="text" name="_honey" style="display:none"> <!-- Anti-spam field -->
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:sir.mukoyakhisa@gmail.com">sir.mukoyakhisa@gmail.com</a>
+                            <p>Typically responds within 24 hours</p>
+                        </div>
+                    </div>
 
-                                <!-- Form Fields with Validation -->
-                                <div class="form-group">
-                                  <label for="name">Your Name</label>
-                                  <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    class="form-control"
-                                    required
-                                    minlength="2"
-                                    maxlength="50"
-                                    placeholder="Enter your name (2-50 characters)"
-                                  >
-                                  <div class="invalid-feedback">Name must be 2-50 characters long.</div>
-                                </div>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="300">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+254752392314">+254 752 392 314</a>
+                            <p>Available Mon-Fri, 9am-5pm EAT</p>
+                        </div>
+                    </div>
 
-                                <div class="form-group">
-                                  <label for="email">Your Email</label>
-                                  <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    class="form-control"
-                                    required
-                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                                    placeholder="Enter a valid email (e.g., user@example.com)"
-                                  >
-                                  <div class="invalid-feedback">Please enter a valid email address.</div>
-                                </div>
-
-                                <div class="form-group">
-                                  <label for="subject">Subject</label>
-                                  <input
-                                    type="text"
-                                    id="subject"
-                                    name="subject"
-                                    class="form-control"
-                                    required
-                                    minlength="5"
-                                    maxlength="100"
-                                    placeholder="Subject (5-100 characters)"
-                                  >
-                                  <div class="invalid-feedback">Subject must be 5-100 characters long.</div>
-                                </div>
-
-                                <div class="form-group">
-                                  <label for="message">Your Message</label>
-                                  <textarea
-                                    id="message"
-                                    name="message"
-                                    class="form-control"
-                                    required
-                                    minlength="10"
-                                    maxlength="2000"
-                                    rows="5"
-                                    placeholder="Message (10-2000 characters)"
-                                  ></textarea>
-                                  <div class="invalid-feedback">Message must be 10-2000 characters long.</div>
-                                </div>
-
-                                <!-- reCAPTCHA (I will replace with my site key)
-                                <div class="form-group">
-                                  <div class="g-recaptcha" data-sitekey="6LfvJ1wrAAAAAOlvJlE8SaG5MvOYScgU0EB98a6f"></div>
-                                  <div id="recaptcha-error" class="invalid-feedback">Please complete the reCAPTCHA.</div>
-                                </div> -->
-
-                                <button type="submit" class="btn btn-lg form-submit">
-                                  <i class="fas fa-paper-plane btn-icon"></i> Send Message
-                                </button>
-                              </form>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="400">
+                        <div class="contact-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Social Media</h3>
+                            <p>Connect with me on these platforms</p>
+                            <div class="social-links">
+                                <a href="https://github.com/mkcoder729" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/sir-mukoya-khisa" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com/sir_khisa" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                                <a href="https://instagram.com/the_sir._k" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
+                <div class="contact-form" data-aos="fade-left" data-aos-delay="500">
+                    <form action="https://formsubmit.co/sir.mukoyakhisa@gmail.com" method="POST" id="contact-form">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_next" value="https://mkcoder729.github.io/just-my-portfolio/thanks.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="New Message From Portfolio">
+                        <input type="text" name="_honey" style="display:none"> <!-- Anti-spam field -->
+
+                        <!-- Form Fields with Validation -->
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="form-control"
+                                required
+                                minlength="2"
+                                maxlength="50"
+                                placeholder="Enter your name (2-50 characters)"
+                            >
+                            <div class="invalid-feedback">Name must be 2-50 characters long.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-control"
+                                required
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                placeholder="Enter a valid email (e.g., user@example.com)"
+                            >
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                class="form-control"
+                                required
+                                minlength="5"
+                                maxlength="100"
+                                placeholder="Subject (5-100 characters)"
+                            >
+                            <div class="invalid-feedback">Subject must be 5-100 characters long.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form-control"
+                                required
+                                minlength="10"
+                                maxlength="2000"
+                                rows="5"
+                                placeholder="Message (10-2000 characters)"
+                            ></textarea>
+                            <div class="invalid-feedback">Message must be 10-2000 characters long.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-lg form-submit" id="submit-btn">
+                            <i class="fas fa-paper-plane btn-icon"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
