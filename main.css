@@ -92,6 +92,13 @@
           filter: drop-shadow(0 2px 8px rgba(229,9,20,0.3)) !important;
           z-index: 9999 !important;
         }
+
+            @font-face {
+                font-family: 'YourFont';
+                src: url('yourfont.woff2') format('woff2'),
+                     url('yourfont.woff') format('woff');
+                font-display: swap;
+            }
         /* ===== Global Styles & Variables ===== */
         :root {
             --netflix-red: #e50914;
@@ -401,6 +408,7 @@
             color: var(--netflix-red);
             transform: rotate(90deg);
         }
+
 
         /* ===== Hero Section ===== */
         .hero {
