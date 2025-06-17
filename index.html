@@ -14,8 +14,10 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
 
+
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
         <!-- Preload key resources -->
     <link rel="preload" href="your-main-font.woff2" as="font" type="font/woff2" crossorigin>
@@ -71,29 +73,41 @@
         </div>
     </header>
 
+
+
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero-content">
                 <h1 class="hero-title">MUKOYA KHISA</h1>
 
-                <!-- Updated Typing Animation Container -->
-            <div class="terminal-container" id="workingTerminal">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="terminal-btn btn-red"></span>
-                        <span class="terminal-btn btn-yellow"></span>
-                        <span class="terminal-btn btn-green"></span>
-                    </div>
-                    <span class="terminal-title">mukoya's @portfolio: ~</span>
+                    <!--Typing Terminal-->
+        <div class="terminal-container" id="workingTerminal">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-btn btn-red" id="closeBtn"></span>
+                    <span class="terminal-btn btn-yellow" id="minimizeBtn"></span>
+                    <span class="terminal-btn btn-green" id="maximizeBtn"></span>
                 </div>
-                <div class="terminal-body" id="terminalContent">
-                    <div class="terminal-line">
-                        <span class="terminal-prompt">$</span>
-                        <span class="terminal-text" id="typingText"></span>
-                        <span class="terminal-cursor"></span>
-                    </div>
+                <span class="terminal-title">mukoya's @portfolio: ~</span>
+                <div class="terminal-controls">
+                    <button id="pauseBtn" class="terminal-control-btn" title="Pause">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <button id="restartBtn" class="terminal-control-btn" title="Restart">
+                        <i class="fas fa-redo"></i>
+                    </button>
                 </div>
             </div>
+            <div class="terminal-body" id="terminalContent">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span>
+                    <span class="terminal-text"></span>
+                    <span class="terminal-cursor"></span>
+                </div>
+            </div>
+        </div>
+
+
 
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-lg">
@@ -112,7 +126,11 @@
 
             <!-- Particles Background -->
             <div id="particles-js" class="hero-particles"></div>
+
+
         </section>
+
+
 
     <!-- About Section -->
     <section class="about section" id="about">
@@ -552,6 +570,8 @@
                             </div>
                         </div>
                     </div>
+
+                    
                 </div>
             </div>
         </section>
@@ -973,6 +993,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
