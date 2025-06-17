@@ -1,104 +1,4 @@
-               /* ===== PERFORMANCE OPTIMIZATIONS ===== */
-        html {
-          scroll-behavior: smooth;
-          scroll-padding-top: 20px; /* Prevents header overlap */
-        }
 
-        /* Hardware acceleration for smooth animations */
-        body {
-          overscroll-behavior-y: contain; /* Prevents pull-to-refresh */
-          text-rendering: optimizeSpeed;
-          -webkit-font-smoothing: antialiased;
-        }
-
-        /* Critical elements that should NEVER lag */
-        .terminal-container,
-        .project-card,
-        .filter-btn {
-          transform: translateZ(0);
-          backface-visibility: hidden;
-          will-change: transform, opacity;
-        }
-
-        /* Remove animations for users who prefer reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation-duration: 0.01ms !important;
-            transition-duration: 0.01ms !important;
-          }
-        }
-                /* ===== SMOOTH HOVER EFFECTS FOR ENTIRE WEBSITE ===== */
-        /* 1. Enable GPU acceleration for all interactive elements */
-        a, button, .hover-effect, [class*="hover"] {
-          transform: translateZ(0);
-          backface-visibility: hidden;
-        }
-
-        /* 2. Optimize transitions */
-        * {
-          transition:
-            transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-            opacity 0.3s ease,
-            box-shadow 0.3s ease;
-        }
-
-        /* 3. Force hardware acceleration for complex animations */
-        @media (hover: hover) {
-          .card, .menu-item, .gallery-item {
-            will-change: transform, opacity;
-            transform-style: preserve-3d;
-          }
-        }
-
-        /* 4. Disable hover effects on touch devices */
-        @media (hover: none) {
-          * {
-            transition: none !important;
-            transform: none !important;
-          }
-        }
-
-        /* ⚡ ATOMIC SMOOTHNESS */
-        html {
-          scroll-behavior: smooth;
-        }
-
-
-
-        body {
-          perspective: 1000px;
-          transform-style: preserve-3d;
-        }
-
-        * {
-          will-change: transform, opacity, filter;
-          backface-visibility: hidden;
-          transform: translate3d(0,0,0);
-          animation-play-state: running !important;
-        }
-
-        @media (hover: hover) {
-          a, button, [hover] {
-            transition:
-              transform 0.12s cubic-bezier(0.22, 1, 0.36, 1),
-              filter 0.1s linear,
-              box-shadow 0.15s ease-out !important;
-          }
-        }
-
-        /* 🚀 HYPER-HOVER STATES */
-        a:hover, button:hover, [hover]:hover {
-          transform: scale(1.02) translateZ(50px) !important;
-          filter: drop-shadow(0 2px 8px rgba(229,9,20,0.3)) !important;
-          z-index: 9999 !important;
-        }
-
-            @font-face {
-                font-family: 'YourFont';
-                src: url('yourfont.woff2') format('woff2'),
-                     url('yourfont.woff') format('woff');
-                font-display: swap;
-            }
         /* ===== Global Styles & Variables ===== */
         :root {
             --netflix-red: #e50914;
@@ -132,11 +32,6 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
-            transform: translate3d(0,0,0);
-            backface-visibility: hidden;
-            perspective: 1000px;
-
-
         }
 
         body::before {
@@ -408,8 +303,6 @@
             color: var(--netflix-red);
             transform: rotate(90deg);
         }
-
-
         /* ===== Hero Section ===== */
         .hero {
             height: 100vh;
@@ -420,6 +313,7 @@
             align-items: center;
             text-align: center;
             overflow: hidden;
+            pointer-events: none;
         }
 
         .hero::before {
@@ -440,6 +334,7 @@
             padding: 0 1.5rem;
             max-width: 800px;
             margin: 0 auto;
+            pointer-events: auto;
         }
 
         .hero-title {
@@ -469,19 +364,22 @@
             animation: fadeInUp 1s ease 0.6s forwards;
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
-
-                 /* ===== Typing Animation Styles ===== */
+        /* ===== Typing Animation Styles ===== */
         .terminal-container {
-            width: 90vw; /* Changed from 150% to viewport units */
-            max-width: 800px;
-            min-width: 300px; /* Added to prevent too small on mobile */
+            width: 90vw;
+            max-width: 850px;
+            min-width: 300px;
             margin: 0.9rem auto;
             border-radius: 8px;
             overflow: hidden;
             background: #0d0d0d;
-            border: 1px solid #e50914;
-            box-shadow: 0 0 30px rgba(229, 9, 20, 0.3);
-            font-family: 'Courier New', monospace;
+            border: 2px solid #e50914;
+            box-shadow: 0 0 80px rgba(229, 9, 20, 0.3);
+            font-family: 'Source Code Pro', monospace;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+
         }
 
         .terminal-header {
@@ -495,13 +393,18 @@
         .terminal-buttons {
             display: flex;
             gap: 8px;
-            margin-right: 12px;
         }
 
         .terminal-btn {
             width: 13px;
             height: 13px;
             border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .terminal-btn:hover {
+            transform: scale(1.1);
         }
 
         .terminal-text {
@@ -509,16 +412,16 @@
             font-size: 0.9rem;
             font-weight: 800;
             color: #e50914;
-            text-shadow: 0 0 4px rgba(229, 9, 20, 0.4);
+            text-shadow: 0 0 8px rgba(229, 9, 20, 0.4);
             letter-spacing: 0.03em;
-            white-space: pre-wrap; /* Changed from pre to pre-wrap */
+            white-space: pre-wrap;
             line-height: 1.4;
             padding: 8px 12px;
             background: rgba(20, 20, 20, 0.7);
             border-radius: 3px;
             border-left: 2px solid #e50914;
             display: inline-block;
-            overflow-wrap: break-word; /* Added for long words */
+            overflow-wrap: break-word;
         }
 
         .btn-red { background: #ff5f56; }
@@ -528,11 +431,18 @@
         .terminal-title {
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.85rem;
+            margin: 0 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 0;
         }
 
         .terminal-body {
             padding: 1.5rem;
             min-height: 120px;
+            overflow-y: auto;
+            max-height: 440px;
         }
 
         .terminal-line {
@@ -552,10 +462,6 @@
             font-weight: bold;
         }
 
-        #workingText {
-            white-space: pre-wrap;
-        }
-
         .terminal-cursor {
             display: inline-block;
             width: 10px;
@@ -566,10 +472,46 @@
             box-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
         }
 
+        .terminal-controls {
+            display: flex;
+            gap: 8px;
+            margin-left: auto;
+        }
+
+        .terminal-control-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 0 5px;
+            transition: color 0.2s;
+        }
+
+        .terminal-control-btn:hover {
+            color: #e50914;
+        }
+
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+
+        /* Scrollbar styling */
+        .terminal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .terminal-body::-webkit-scrollbar-track {
+            background: #0d0d0d;
+        }
+
+        .terminal-body::-webkit-scrollbar-thumb {
+            background: #e50914;
+            border-radius: 4px;
+        }
+
+
         .hero-buttons {
             display: flex;
             justify-content: center;
@@ -580,18 +522,23 @@
             animation: fadeInUp 1s ease 0.9s forwards;
         }
 
+
+        /* Scroll button styles */
         .hero-scroll {
             position: absolute;
-            bottom: 30px;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             color: var(--netflix-white);
             font-size: 2rem;
-            animation: bounce 2s infinite;
             cursor: pointer;
             opacity: 0;
-            animation: fadeIn 1s ease 1.5s forwards, bounce 2s infinite 2.5s;
+            z-index: 10; /* Ensure it's above other elements */
             transition: all var(--transition-speed) ease;
+            animation:
+                fadeIn 1s ease 1.5s forwards,
+                bounce 2s infinite 2.5s;
+            pointer-events: auto; /* Force clickable */
         }
 
         .hero-scroll:hover {
@@ -599,6 +546,22 @@
             transform: translateX(-50%) scale(1.2);
         }
 
+        /* Keyframes */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-15px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-7px) translateX(-50%);
+            }
+        }
         .hero-particles {
             position: absolute;
             top: 0;
@@ -608,6 +571,7 @@
             z-index: 0;
             pointer-events: none;
         }
+
         .matrix-bg {
             opacity: 0.15; /* Increased visibility */
             z-index: -1;
@@ -638,7 +602,8 @@
         #particles-js canvas {
             animation: particlePulse 3s infinite ease-in-out;
         }
-                /* Make canvas elements interactive */
+
+        /* Make canvas elements interactive */
         .matrix-bg {
             position: fixed;
             top: 0;
@@ -669,6 +634,7 @@
         .hero-content {
             pointer-events: auto;
         }
+
 
         /* ===== About Section ===== */
         .about {
@@ -1155,6 +1121,7 @@
             font-size: 1.1rem;
         }
 
+
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             #projects {
@@ -1178,6 +1145,8 @@
         .project-card.hidden {
             display: none;
         }
+
+
         /* ===== Services Section ===== */
         .services {
             background-color: #111;
@@ -1291,7 +1260,7 @@
             transform: translateY(0);
         }
 
-    /* ===== TESTIMONIALS SECTION ===== */
+        /* ===== TESTIMONIALS SECTION ===== */
         #testimonials {
             background-color: #0a0a0a;
             padding: 100px 0;
@@ -1324,7 +1293,6 @@
             background-clip: text;
             color: transparent;
         }
-
 
         /* Testimonials Grid - 3 columns desktop, 2 tablet, 1 mobile */
         .testimonials-grid {
@@ -1457,6 +1425,7 @@
                 padding: 0 5px;
             }
         }
+
         /* ===== Contact Section ===== */
         .contact {
             background-color: #111;
