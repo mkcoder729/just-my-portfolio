@@ -111,117 +111,208 @@
                 });
             });
 
-        //==== Typing animation ======//
-                // Track if typing is in progress
-                let isTyping = false;
+            //==== Typing Animation Functionality ====//
 
-                function startTyping() {
-                    if (isTyping) return;
-                    isTyping = true;
+            // Animation state
+            const terminalState = {
+                isTyping: false,
+                isPaused: false,
+                currentTimeout: null,
+                currentLineIndex: 0,
+                currentCharIndex: 0,
+                currentTextElement: null,
+                cursor: null,
+                lines: [
+                    { text: ">>>>> Why do Python developers need glasses???.", delay: 300, isOutput: true },
+                    { text: "Because they can't C !!!.", delay: 400 },
+                    { text: "Welcome to Mukoya Khisa's 1337 Terminal.", delay: 400 },
+                    { text: "Initializing... (Warning: Contains 99.999% pure computational awesomeness).", delay: 500 },
+                    { text: "def display_credentials():", type: "code", class: "code-keyword", delay: 600 },
+                    { text: "    print('Civil Engineering Student | Python & C/C++ Developer').", type: "code", class: "code-string", delay: 100 },
+                    { text: "    print('Web Development Master | LaTeX Guru | Mathematics Beast').", type: "code", class: "code-string", delay: 100 },
+                    { text: ">>>>> My IDE: 1% writing code 99% fixing my own typos.", delay: 400 },
+                    { text: ">>>>> I don't use exceptions - I AM the exception 😎.", delay: 400 },
+                    { text: "// Warning 💀💀💀: Exposure to this portfolio may cause intense hiring urges!!! 😁.", type: "code", class: "code-comment", delay: 300 }
+                ]
+            };
 
-                    const terminalContent = document.getElementById("terminalContent");
-                    terminalContent.innerHTML = '';
-                    terminalContent.style.fontSize = '0.9rem';
+            // Initialize the terminal
+            function initTerminal() {
+                addControlButtons();
+                setupEventListeners();
+                startTyping();
+            }
 
-                    // Create initial line with cursor
-                    const initialLine = document.createElement('div');
-                    initialLine.className = 'terminal-line';
-                    initialLine.innerHTML = `
-                        <span class="terminal-prompt">$</span>
-                        <span class="terminal-text"></span>
-                        <span class="terminal-cursor"></span>
-                    `;
-                    terminalContent.appendChild(initialLine);
+            // Add control buttons if they don't exist
+            function addControlButtons() {
+                const terminalHeader = document.querySelector('.terminal-header');
+                if (!terminalHeader.querySelector('.terminal-controls')) {
+                    terminalHeader.insertAdjacentHTML('beforeend', `
+                        <div class="terminal-controls">
+                            <button id="pauseBtn" class="terminal-control-btn" title="Pause">
+                                <i class="fas fa-pause"></i>
+                            </button>
+                            <button id="restartBtn" class="terminal-control-btn" title="Restart">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                        </div>
+                    `);
+                }
+            }
 
-                    // YOUR COMPLETE ORIGINAL LINES ARRAY (UNTOUCHED)
-                    const lines = [
-                            { text: ">>> Why do Python developers need glasses? ---------- Because they can't C!", delay: 300, isOutput: true },
-                            { text: "Welcome to Mukoya Khisa's 1337 Terminal.", delay: 400 },
-                            { text: "Initializing... (Warning: Contains 99.999% pure computational awesomeness).", delay: 500 },
-                            { text: "def display_credentials():", type: "code", class: "code-keyword", delay: 600 },
-                            { text: "    print('Civil Engineering Student | Python & C/C++ Developer')", type: "code", class: "code-string", delay: 100 },
-                            { text: "    print('Web Development Master | LaTeX Guru | Mathematics Beast.')", type: "code", class: "code-string", delay: 100 },
-                            { text: ">>> My IDE: 1% writing code 99% fixing my own typos.", delay: 300, isOutput: true },
-                            { text: ">>> I don't use exceptions - I AM the exception 😎.", delay: 300, isOutput: true },
-                            { text: "// Warning 💀💀💀: Exposure to this portfolio may cause intense hiring urges!!! 😁.", type: "code", class: "code-comment", delay: 300 }
-                        ];
+            // Set up event listeners
+            function setupEventListeners() {
+                document.getElementById('pauseBtn').addEventListener('click', togglePause);
+                document.getElementById('restartBtn').addEventListener('click', restartAnimation);
 
-                    let currentLineIndex = 0;
-                    let currentCharIndex = 0;
-                    let currentTextElement = initialLine.querySelector('.terminal-text');
-                    const cursor = initialLine.querySelector('.terminal-cursor');
-
-                    function createNewLine(isOutput = false) {
-                        const lineDiv = document.createElement('div');
-                        lineDiv.className = 'terminal-line';
-
-                        if (!isOutput) {
-                            lineDiv.innerHTML = `
-                                <span class="terminal-prompt">$</span>
-                                <span class="terminal-text"></span>
-                            `;
-                        } else {
-                            lineDiv.innerHTML = `<span class="terminal-text"></span>`;
-                        }
-
-                        terminalContent.appendChild(lineDiv);
-                        return lineDiv.querySelector('.terminal-text');
+                document.getElementById('workingTerminal').addEventListener('click', function(e) {
+                    if (!e.target.closest('.terminal-control-btn') && !terminalState.isTyping) {
+                        restartAnimation();
                     }
+                });
+            }
 
-                    function typeCharacter() {
-                        if (currentLineIndex < lines.length) {
-                            const currentLine = lines[currentLineIndex];
+            // Start or resume typing animation
+            function startTyping() {
+                if (terminalState.isTyping && !terminalState.isPaused) return;
 
-                            if (currentCharIndex === 0 && currentLineIndex > 0) {
-                                cursor.style.display = 'none';
-                                currentTextElement = createNewLine(currentLine.isOutput);
-
-                                if (currentLine.class) {
-                                    const span = document.createElement('span');
-                                    span.className = currentLine.class;
-                                    currentTextElement.appendChild(span);
-                                    currentTextElement = span;
-                                }
-                            }
-
-                            if (currentCharIndex < currentLine.text.length) {
-                                currentTextElement.textContent += currentLine.text.charAt(currentCharIndex);
-                                currentCharIndex++;
-                                setTimeout(typeCharacter, 30 + Math.random() * 20);
-                            } else {
-                                currentLineIndex++;
-                                currentCharIndex = 0;
-                                if (currentLineIndex < lines.length) {
-                                    setTimeout(typeCharacter, 10);
-                                } else {
-                                    const finalLine = document.createElement('div');
-                                    finalLine.className = 'terminal-line';
-                                    finalLine.innerHTML = `
-                                        <span class="terminal-prompt">$</span>
-                                        <span class="terminal-text"></span>
-                                        <span class="terminal-cursor"></span>
-                                    `;
-                                    terminalContent.appendChild(finalLine);
-                                    isTyping = false;
-                                    setTimeout(startTyping, 1000);
-
-
-                                }
-                            }
-                        }
-                    }
-
-                    typeCharacter();
+                // If resuming from pause
+                if (terminalState.isPaused) {
+                    terminalState.isPaused = false;
+                    updatePauseButton();
+                    typeCharacter(); // Continue typing from where we left off
+                    return;
                 }
 
-                // Start when page loads
-                window.addEventListener('load', startTyping);
+                // Fresh start
+                terminalState.isTyping = true;
+                terminalState.isPaused = false;
+                terminalState.currentLineIndex = 0;
+                terminalState.currentCharIndex = 0;
 
-                // Click to restart (single speed)
-                document.getElementById('workingTerminal').addEventListener('click', () => {
-                    if (!isTyping) startTyping();
-                });
+                const terminalContent = document.getElementById("terminalContent");
+                terminalContent.innerHTML = '';
+                terminalContent.style.fontSize = '0.9rem';
 
+                // Create initial line with cursor
+                const initialLine = document.createElement('div');
+                initialLine.className = 'terminal-line';
+                initialLine.innerHTML = `
+                    <span class="terminal-prompt">$</span>
+                    <span class="terminal-text"></span>
+                    <span class="terminal-cursor"></span>
+                `;
+                terminalContent.appendChild(initialLine);
+
+                terminalState.currentTextElement = initialLine.querySelector('.terminal-text');
+                terminalState.cursor = initialLine.querySelector('.terminal-cursor');
+
+                typeCharacter();
+            }
+
+            // Core typing function
+            function typeCharacter() {
+                if (terminalState.isPaused) return;
+
+                if (terminalState.currentLineIndex < terminalState.lines.length) {
+                    const currentLine = terminalState.lines[terminalState.currentLineIndex];
+
+                    // Create new line if needed
+                    if (terminalState.currentCharIndex === 0 && terminalState.currentLineIndex > 0) {
+                        terminalState.cursor.style.display = 'none';
+                        terminalState.currentTextElement = createNewLine(currentLine.isOutput);
+
+                        if (currentLine.class) {
+                            const span = document.createElement('span');
+                            span.className = currentLine.class;
+                            terminalState.currentTextElement.appendChild(span);
+                            terminalState.currentTextElement = span;
+                        }
+                    }
+
+                    // Type next character
+                    if (terminalState.currentCharIndex < currentLine.text.length) {
+                        terminalState.currentTextElement.textContent += currentLine.text.charAt(terminalState.currentCharIndex);
+                        terminalState.currentCharIndex++;
+                        terminalState.currentTimeout = setTimeout(typeCharacter, 30 + Math.random() * 20);
+                    } else {
+                        // Move to next line
+                        terminalState.currentLineIndex++;
+                        terminalState.currentCharIndex = 0;
+                        if (terminalState.currentLineIndex < terminalState.lines.length) {
+                            terminalState.currentTimeout = setTimeout(typeCharacter, currentLine.delay || 10);
+                        } else {
+                            // Animation complete
+                            const finalLine = document.createElement('div');
+                            finalLine.className = 'terminal-line';
+                            finalLine.innerHTML = `
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-text"></span>
+                                <span class="terminal-cursor"></span>
+                            `;
+                            document.getElementById("terminalContent").appendChild(finalLine);
+                            terminalState.isTyping = false;
+                            terminalState.currentTimeout = setTimeout(startTyping, 5000);
+                        }
+                    }
+                }
+            }
+
+            // Create a new line in terminal
+            function createNewLine(isOutput = false) {
+                const terminalContent = document.getElementById("terminalContent");
+                const lineDiv = document.createElement('div');
+                lineDiv.className = 'terminal-line';
+
+                if (!isOutput) {
+                    lineDiv.innerHTML = `
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-text"></span>
+                    `;
+                } else {
+                    lineDiv.innerHTML = `<span class="terminal-text"></span>`;
+                }
+
+                terminalContent.appendChild(lineDiv);
+                return lineDiv.querySelector('.terminal-text');
+            }
+
+            // Toggle pause state
+            function togglePause() {
+                if (!terminalState.isTyping) return;
+
+                terminalState.isPaused = !terminalState.isPaused;
+                updatePauseButton();
+
+                if (terminalState.isPaused) {
+                    clearTimeout(terminalState.currentTimeout);
+                } else {
+                    typeCharacter(); // Resume typing
+                }
+            }
+
+            // Update pause button appearance
+            function updatePauseButton() {
+                const pauseBtn = document.getElementById('pauseBtn');
+                if (terminalState.isPaused) {
+                    pauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    pauseBtn.title = 'Resume';
+                } else {
+                    pauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    pauseBtn.title = 'Pause';
+                }
+            }
+
+            // Restart the animation
+            function restartAnimation() {
+                clearTimeout(terminalState.currentTimeout);
+                terminalState.isTyping = false;
+                terminalState.isPaused = false;
+                startTyping();
+            }
+
+            // Start when page loads
+            window.addEventListener('load', initTerminal);
 
 
                         // Contact Form Submission with FormSubmit
@@ -550,6 +641,8 @@
                 });
             });
 
+
+
                         // Lazy Load Images with Intersection Observer
             document.addEventListener("DOMContentLoaded", function() {
                 const lazyImages = document.querySelectorAll("img.lazy");
@@ -772,6 +865,8 @@
             matrixCanvas.height = window.innerHeight;
         });
 
+
+
                         // Email validation function
         function validateEmail(email) {
             // RFC 5322 Official Standard compliant regex
@@ -894,70 +989,6 @@
           });
         });
 
-            // ⚡ HYPER-PERFORMANCE INITIALIZATION
-            document.addEventListener('DOMContentLoaded', () => {
-              // 1. FORCE GPU GOD MODE
-              document.querySelectorAll('*').forEach(el => {
-                el.style.willChange = 'transform, opacity, filter';
-                el.style.transform = 'translate3d(0,0,0)';
-                el.style.backfaceVisibility = 'hidden';
-                el.style.perspective = '1000px';
-              });
-
-              // 2. PRECISION HOVER PRIME
-              const hoverElements = document.querySelectorAll('a, button, [class], [hover]');
-              hoverElements.forEach(el => {
-                el.style.transition = 'all 0.16s cubic-bezier(0.45, 0, 0.55, 1)';
-                el.dataset.hoverPrime = 'ready';
-              });
-
-              // 3. SCROLL PHASER (60FPS LOCK)
-              const scroller = () => {
-                window.requestAnimationFrame(() => {
-                  document.documentElement.style.setProperty(
-                    '--scroll-y',
-                    `${window.scrollY}px`
-                  );
-                  scroller();
-                });
-              };
-              scroller();
-
-              // 4. HOVER PREDICTION ENGINE
-              let lastX, lastY;
-              document.addEventListener('mousemove', (e) => {
-                [lastX, lastY] = [e.clientX, e.clientY];
-                const hoverTarget = document.elementFromPoint(lastX, lastY);
-                if (hoverTarget) {
-                  hoverTarget.classList.add('hyper-hover');
-                  setTimeout(() => hoverTarget.classList.remove('hyper-hover'), 100);
-                }
-              }, { passive: true });
-
-              // 5. ANIMATION QUANTUM CHANNEL
-              const animate = (time) => {
-                document.querySelectorAll('[data-animate]').forEach(el => {
-                  el.style.transform = `translateY(${Math.sin(time/600) * 5}px)`;
-                });
-                requestAnimationFrame(animate);
-              };
-              animate(0);
-            });
-
-            // 6. CRITICAL CSS INJECTOR
-            const criticalCSS = `
-              .hyper-hover {
-                transform: scale(1.05) !important;
-                filter: brightness(1.2) !important;
-                transition-duration: 0.01s !important;
-              }
-              * {
-                scroll-behavior: smooth !important;
-                image-rendering: -webkit-optimize-contrast !important;
-              }
-            `;
-            document.head.insertAdjacentHTML('beforeend', `<style>${criticalCSS}</style>`);
-
 
                     // Load AOS animation library lazily
         if ('IntersectionObserver' in window) {
@@ -982,44 +1013,9 @@
         document.head.appendChild(faScript);
 
 
-            // Performance monitoring
-    window.addEventListener('load', function() {
-        // Send performance metrics to your analytics
-        const timing = window.performance.timing;
-        const loadTime = timing.loadEventEnd - timing.navigationStart;
-
-        if (loadTime > 3000) {
-            console.warn(`Page took ${loadTime}ms to load - consider optimizing further`);
-        }
-
-        // Log largest contentful paint
-        new PerformanceObserver((entryList) => {
-            const entries = entryList.getEntries();
-            const lastEntry = entries[entries.length - 1];
-            console.log('LCP:', lastEntry.startTime);
-        }).observe({type: 'largest-contentful-paint', buffered: true});
-    });
 
 
 
-
-    if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js');
-    });
-}
-
-
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-        const btn = document.getElementById('submit-btn');
-        btn.disabled = true;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-        // Use requestIdleCallback for smoother submission
-        requestIdleCallback(() => {
-            // Form will submit normally after this
-        });
-    });
 
 
 
