@@ -550,6 +550,46 @@
                 });
             });
 
+                        // Lazy Load Images with Intersection Observer
+            document.addEventListener("DOMContentLoaded", function() {
+                const lazyImages = document.querySelectorAll("img.lazy");
+
+                if ("IntersectionObserver" in window) {
+                    const lazyImageObserver = new IntersectionObserver(
+                        (entries, observer) => {
+                            entries.forEach((entry) => {
+                                if (entry.isIntersecting) {
+                                    const img = entry.target;
+                                    img.src = img.dataset.src;
+                                    img.classList.remove("lazy");
+                                    observer.unobserve(img);
+                                }
+                            });
+                        },
+                        {
+                            rootMargin: "200px", // Start loading 200px before entering viewport
+                            threshold: 0.1
+                        }
+                    );
+
+                    lazyImages.forEach((img) => lazyImageObserver.observe(img));
+                } else {
+                    // Fallback for older browsers
+                    lazyImages.forEach((img) => {
+                        img.src = img.dataset.src;
+                        img.classList.remove("lazy");
+                    });
+                }
+            });
+
+            // Initialize AOS with lazy loading
+                AOS.init({
+                    disable: window.innerWidth < 768, // Disable on mobile if needed
+                    startEvent: 'DOMContentLoaded',
+                    offset: 100, // Start animations 100px earlier
+                    once: true // Only animate once
+                });
+
 
             // ===== AI Chatbox Functionality =====
             const chatboxToggle = document.getElementById('chatboxToggle');
@@ -917,6 +957,69 @@
               }
             `;
             document.head.insertAdjacentHTML('beforeend', `<style>${criticalCSS}</style>`);
+
+
+                    // Load AOS animation library lazily
+        if ('IntersectionObserver' in window) {
+            const script = document.createElement('script');
+            script.src = 'https://unpkg.com/aos@next/dist/aos.js';
+            script.defer = true;
+            script.onload = function() {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true
+                });
+            };
+            document.head.appendChild(script);
+        }
+
+        // Load Font Awesome lazily
+        const faScript = document.createElement('script');
+        faScript.src = 'https://kit.fontawesome.com/your-kit-id.js';
+        faScript.crossOrigin = 'anonymous';
+        faScript.defer = true;
+        document.head.appendChild(faScript);
+
+
+            // Performance monitoring
+    window.addEventListener('load', function() {
+        // Send performance metrics to your analytics
+        const timing = window.performance.timing;
+        const loadTime = timing.loadEventEnd - timing.navigationStart;
+
+        if (loadTime > 3000) {
+            console.warn(`Page took ${loadTime}ms to load - consider optimizing further`);
+        }
+
+        // Log largest contentful paint
+        new PerformanceObserver((entryList) => {
+            const entries = entryList.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            console.log('LCP:', lastEntry.startTime);
+        }).observe({type: 'largest-contentful-paint', buffered: true});
+    });
+
+
+
+
+    if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js');
+    });
+}
+
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        const btn = document.getElementById('submit-btn');
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+        // Use requestIdleCallback for smoother submission
+        requestIdleCallback(() => {
+            // Form will submit normally after this
+        });
+    });
 
 
 
