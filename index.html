@@ -347,235 +347,407 @@
         </div>
     </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="projects-shape"></div>
-            <div class="container">
+<!-- Projects Section -->
+<section id="projects">
+    <div class="projects-shape"></div>
+    <div class="container">
                 <h2 class="section-title">My <span class="text-gradient">Projects</span></h2>
                 <p class="section-subtitle">A showcase of my work at the intersection of engineering and technology</p>
+    </div>
 
-                <div class="filter-container">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="engineering">Engineering</button>
-                    <button class="filter-btn" data-filter="programming">Programming</button>
-                    <button class="filter-btn" data-filter="mathematics">Mathematics</button>
-                    <button class="filter-btn" data-filter="web">Web</button>
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="engineering">Engineering</button>
+        <button class="filter-btn" data-filter="programming">Programming</button>
+        <button class="filter-btn" data-filter="mathematics">Mathematics</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
+    </div>
+
+    <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card visible" data-category="engineering" data-id="1">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Structural Analysis Tool" loading="lazy">
+                <div class="project-badge">Featured</div>
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Structural Analysis Tool</h3>
+                <p class="project-description">A comprehensive Python application for analyzing beam deflections, stress distributions, and load capacities with graphical output and automated reporting. Incorporates finite element analysis for complex structures.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">NumPy</span>
+                    <span class="project-tag">Matplotlib</span>
+                    <span class="project-tag">FEA</span>
                 </div>
-
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card" data-category="engineering">
-                        <div class="project-image">
-                            <img
-                                data-src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                                class="lazy"
-                                alt="Structural Analysis Tool"
-                                width="1170"
-                                height="780"
-                            >
-                            <div class="project-badge">Featured</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Structural Analysis Tool</h3>
-                            <p class="project-description">
-                                A comprehensive Python application for analyzing beam deflections, stress distributions, and load capacities with graphical output and automated reporting. Incorporates finite element analysis for complex structures.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">NumPy</span>
-                                <span class="project-tag">Matplotlib</span>
-                                <span class="project-tag">FEA</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-card" data-category="web">
-                        <div class="project-image">
-                            <img
-                                data-src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                                class="lazy"
-                                alt="AHS Math Club Website"
-                                width="1170"
-                                height="780"
-                            >
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">AHS Math Club Website</h3>
-                            <p class="project-description">
-                                Official website for The Alliance High School Math Club featuring event calendars, competition resources,
-                                interactive problem sets, and member portal. Designed to promote mathematical engagement school-wide.
-                            </p>
-                            <p>THOUGH IT IS STILL IN DEVELOPMENT,</p>
-                            <div class="project-tags">
-                                <span class="project-tag">HTML/CSS/JavaScript</span>
-                                <span class="project-tag">Python (Django)</span>
-                                <span class="project-tag">Three.js</span>
-                                <span class="project-tag">SQLite</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://mkcoder729.github.io/ahs-mathc2023/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-card" data-category="mathematics">
-                        <div class="project-image">
-                            <img
-                                data-src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1132&q=80"
-                                class="lazy"
-                                alt="Math Visualization Platform"
-                                width="1132"
-                                height="754"
-                            >
-                            <div class="project-badge">New</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Math Visualization Platform</h3>
-                            <p class="project-description">
-                                Interactive web app for visualizing complex mathematical concepts in 3D using Three.js. Features include real-time graphing, vector field visualization, and differential equation solvers with animated solutions.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">Three.js</span>
-                                <span class="project-tag">WebGL</span>
-                                <span class="project-tag">MathJS</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="project-card" data-category="programming">
-                        <div class="project-image">
-                            <img
-                                data-src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                                class="lazy"
-                                alt="LaTeX Thesis Template"
-                                width="1170"
-                                height="780"
-                            >
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">LaTeX Thesis Template</h3>
-                            <p class="project-description">
-                                Professional academic template with automated formatting, bibliography management, and mathematical notation. Includes custom commands for engineering symbols and automated figure/table numbering with cross-referencing.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">LaTeX</span>
-                                <span class="project-tag">BibTeX</span>
-                                <span class="project-tag">Academic</span>
-                                <span class="project-tag">Publishing</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-external-link-alt"></i> View Template</a>
-                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="project-card" data-category="engineering">
-                        <div class="project-image">
-                            <img
-                                data-src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80"
-                                class="lazy"
-                                alt="Construction Management System"
-                                width="1169"
-                                height="779"
-                            >
-                            <div class="project-badge">Popular</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Construction Management System</h3>
-                            <p class="project-description">
-                                Web-based project management tool for construction sites with real-time progress tracking, resource allocation, and automated reporting. Integrates with IoT sensors for material tracking and environmental monitoring.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">React</span>
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">MongoDB</span>
-                                <span class="project-tag">IoT</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="project-card" data-category="programming">
-                        <div class="project-image">
-                            <img
-                                data-src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                                class="lazy"
-                                alt="Algorithm Visualizer"
-                                width="1170"
-                                height="780"
-                            >
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Algorithm Visualizer</h3>
-                            <p class="project-description">
-                                Interactive tool that demonstrates how sorting and pathfinding algorithms work step-by-step. Includes educational explanations, performance comparisons, and the ability to modify parameters in real-time.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">C</span>
-                                <span class="project-tag">Algorithms</span>
-                                <span class="project-tag">Data Structures</span>
-                                <span class="project-tag">Visualization</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 7 -->
-                    <div class="project-card" data-category="engineering">
-                        <div class="project-image">
-                            <img
-                                data-src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80"
-                                class="lazy"
-                                alt="Engineering Calculator Suite"
-                                width="1171"
-                                height="780"
-                            >
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Engineering Calculator Suite</h3>
-                            <p class="project-description">
-                                Comprehensive collection of engineering calculators for structural, geotechnical, and fluid mechanics applications. Features unit conversion, material property databases, and exportable calculation reports.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">PyQt</span>
-                                <span class="project-tag">Engineering</span>
-                                <span class="project-tag">Calculations</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                                <a href="#"><i class="fab fa-github"></i> Source Code</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
                 </div>
             </div>
-        </section>
+        </div>
 
+        <!-- Project 2 -->
+        <div class="project-card visible" data-category="web" data-id="2">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="AHS Math Club Website" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">AHS Math Club Website</h3>
+                <p class="project-description">Official website for The Alliance High School Math Club featuring event calendars, competition resources, interactive problem sets, and member portal. Designed to promote mathematical engagement school-wide.</p>
+                <div class="project-tags">
+                    <span class="project-tag">HTML/CSS/JS</span>
+                    <span class="project-tag">Python (Django)</span>
+                    <span class="project-tag">Three.js</span>
+                    <span class="project-tag">SQLite</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://mkcoder729.github.io/ahs-mathc2023/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card visible" data-category="mathematics" data-id="3">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1132&q=80" alt="Math Visualization Platform" loading="lazy">
+                <div class="project-badge">New</div>
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Math Visualization Platform</h3>
+                <p class="project-description">Interactive web app for visualizing complex mathematical concepts in 3D using Three.js. Features include real-time graphing, vector field visualization, and differential equation solvers with animated solutions.</p>
+                <div class="project-tags">
+                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">Three.js</span>
+                    <span class="project-tag">WebGL</span>
+                    <span class="project-tag">MathJS</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card visible" data-category="programming" data-id="4">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="LaTeX Thesis Template" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">LaTeX Thesis Template</h3>
+                <p class="project-description">Professional academic template with automated formatting, bibliography management, and mathematical notation. Includes custom commands for engineering symbols and automated figure/table numbering with cross-referencing.</p>
+                <div class="project-tags">
+                    <span class="project-tag">LaTeX</span>
+                    <span class="project-tag">BibTeX</span>
+                    <span class="project-tag">Academic</span>
+                    <span class="project-tag">Publishing</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> View Template</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card visible" data-category="engineering" data-id="5">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Construction Management System" loading="lazy">
+                <div class="project-badge">Popular</div>
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Construction Management System</h3>
+                <p class="project-description">Web-based project management tool for construction sites with real-time progress tracking, resource allocation, and automated reporting. Integrates with IoT sensors for material tracking and environmental monitoring.</p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Node.js</span>
+                    <span class="project-tag">MongoDB</span>
+                    <span class="project-tag">IoT</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card visible" data-category="programming" data-id="6">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Algorithm Visualizer" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Algorithm Visualizer</h3>
+                <p class="project-description">Interactive tool that demonstrates how sorting and pathfinding algorithms work step-by-step. Includes educational explanations, performance comparisons, and the ability to modify parameters in real-time.</p>
+                <div class="project-tags">
+                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">Algorithms</span>
+                    <span class="project-tag">Data Structures</span>
+                    <span class="project-tag">Visualization</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-card visible" data-category="engineering" data-id="7">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Engineering Calculator Suite" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Engineering Calculator Suite</h3>
+                <p class="project-description">Comprehensive collection of engineering calculators for structural, geotechnical, and fluid mechanics applications. Features unit conversion, material property databases, and exportable calculation reports.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">PyQt</span>
+                    <span class="project-tag">Engineering</span>
+                    <span class="project-tag">Calculations</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+               <!-- Project 8 -->
+        <div class="project-card visible" data-category="ai" data-id="8">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Concrete Crack Detection AI" loading="lazy">
+                <div class="project-badge">Innovative</div>
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Concrete Crack Detection AI</h3>
+                <p class="project-description">Computer vision system using deep learning to detect and classify cracks in concrete structures with 98% accuracy. Processes images from drones or manual inspections and generates structural integrity reports.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">TensorFlow</span>
+                    <span class="project-tag">OpenCV</span>
+                    <span class="project-tag">Computer Vision</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 9 -->
+        <div class="project-card" data-category="mathematics" data-id="9">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Fractal Generator" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Fractal Generator</h3>
+                <p class="project-description">Interactive application that generates and explores Mandelbrot and Julia sets with customizable parameters. Features zoom navigation, color palette customization, and performance optimization for complex renders.</p>
+                <div class="project-tags">
+                    <span class="project-tag">C++</span>
+                    <span class="project-tag">OpenGL</span>
+                    <span class="project-tag">Complex Numbers</span>
+                    <span class="project-tag">Parallel Computing</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 10 -->
+        <div class="project-card" data-category="web" data-id="10">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Portfolio Website Builder" loading="lazy">
+                <div class="project-badge">Featured</div>
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Portfolio Website Builder</h3>
+                <p class="project-description">Drag-and-drop tool for creating professional portfolio websites with customizable templates. Includes built-in analytics, SEO optimization, and responsive design previews across device sizes.</p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Node.js</span>
+                    <span class="project-tag">MongoDB</span>
+                    <span class="project-tag">Drag-and-Drop</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 11 -->
+        <div class="project-card" data-category="programming" data-id="11">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Code Documentation Generator" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Code Documentation Generator</h3>
+                <p class="project-description">Automated tool that generates comprehensive documentation from source code comments. Supports multiple programming languages and outputs in HTML, PDF, and Markdown formats with search functionality.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Natural Language</span>
+                    <span class="project-tag">CLI Tool</span>
+                    <span class="project-tag">Multi-language</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 12 -->
+        <div class="project-card" data-category="engineering" data-id="12">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Bridge Design Simulator" loading="lazy">
+                <div class="project-badge">New</div>
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Bridge Design Simulator</h3>
+                <p class="project-description">Interactive physics-based simulator for designing and testing bridge structures under various load conditions. Includes material stress analysis, cost estimation, and failure scenario visualization.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Unity</span>
+                    <span class="project-tag">C#</span>
+                    <span class="project-tag">Physics Engine</span>
+                    <span class="project-tag">Civil Engineering</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+        <!-- Project 13 -->
+        <div class="project-card" data-category="mathematics" data-id="13">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80" alt="Number Theory Explorer" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Number Theory Explorer</h3>
+                <p class="project-description">Interactive educational tool for exploring prime numbers, modular arithmetic, and cryptographic concepts. Visualizes number properties, factorization trees, and includes RSA algorithm simulation.</p>
+                <div class="project-tags">
+                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">D3.js</span>
+                    <span class="project-tag">Cryptography</span>
+                    <span class="project-tag">Education</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 14 -->
+        <div class="project-card" data-category="ai" data-id="14">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Construction Site Safety AI" loading="lazy">
+                <div class="project-badge">Innovative</div>
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Construction Site Safety AI</h3>
+                <p class="project-description">Real-time monitoring system that uses computer vision to detect safety violations on construction sites. Identifies missing PPE, hazardous situations, and sends immediate alerts to supervisors.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">YOLOv8</span>
+                    <span class="project-tag">OpenCV</span>
+                    <span class="project-tag">IoT</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 15 -->
+        <div class="project-card" data-category="web" data-id="15">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Interactive STEM Learning Platform" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Interactive STEM Learning Platform</h3>
+                <p class="project-description">Online platform featuring interactive simulations for science and engineering concepts. Includes virtual labs, problem-solving challenges, and personalized learning paths with progress tracking.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Vue.js</span>
+                    <span class="project-tag">Firebase</span>
+                    <span class="project-tag">WebGL</span>
+                    <span class="project-tag">Education</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 16 -->
+        <div class="project-card" data-category="engineering" data-id="16">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Hydraulic System Simulator" loading="lazy">
+                <div class="project-badge">Featured</div>
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Hydraulic System Simulator</h3>
+                <p class="project-description">Engineering tool for designing and simulating hydraulic circuits. Visualizes fluid dynamics, pressure drops, and component interactions with real-time performance metrics and failure analysis.</p>
+                <div class="project-tags">
+                    <span class="project-tag">C++</span>
+                    <span class="project-tag">OpenGL</span>
+                    <span class="project-tag">Fluid Dynamics</span>
+                    <span class="project-tag">Mechanical</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 17 -->
+        <div class="project-card" data-category="programming" data-id="17">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Automated Testing Framework" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">Automated Testing Framework</h3>
+                <p class="project-description">Custom testing framework for engineering software that automates verification of calculation modules. Generates comprehensive test reports with visual diffs and performance benchmarks.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Pytest</span>
+                    <span class="project-tag">CI/CD</span>
+                    <span class="project-tag">Quality Assurance</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-image-container">
+                <img id="modalImage" src="" alt="">
+            </div>
+            <div class="modal-text">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+                <div class="modal-tags" id="modalTags"></div>
+                <div class="modal-links" id="modalLinks"></div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Services Section -->
     <section class="services section" id="services">
@@ -672,13 +844,13 @@
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-header">
                         <img src="https://randomuser.me/api/portraits/women/44.jpg"
-                             alt="Dr. Sarah Johnson"
+                             alt="Dr. Sarah Stephanie"
                              class="testimonial-avatar"
                              loading="lazy"
                              width="60"
                              height="60">
                         <div class="testimonial-author-info">
-                            <h4 class="testimonial-author">Dr. Sarah Johnson</h4>
+                            <h4 class="testimonial-author">Dr. Sarah Stephanie</h4>
                             <p class="testimonial-role">Professor of Civil Engineering, University of Nairobi</p>
                         </div>
                     </div>
@@ -716,14 +888,14 @@
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="testimonial-header">
                         <img src="https://randomuser.me/api/portraits/women/68.jpg"
-                             alt="Rose Cherop"
+                             alt="Esther Naliaka"
                              class="testimonial-avatar"
                              loading="lazy"
                              width="60"
                              height="60">
                         <div class="testimonial-author-info">
-                            <h4 class="testimonial-author">Rose Cherop</h4>
-                            <p class="testimonial-role">MSc Mechanical Engineering Student</p>
+                            <h4 class="testimonial-author">Esther Naliaka</h4>
+                            <p class="testimonial-role">MSc Civil Engineering Student</p>
                         </div>
                     </div>
                     <p class="testimonial-quote">
@@ -760,7 +932,7 @@
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="testimonial-header">
                         <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                             alt="Nelson Mandela"
+                             alt="Grace Wambui"
                              class="testimonial-avatar"
                              loading="lazy"
                              width="60"
@@ -782,13 +954,13 @@
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="350">
                     <div class="testimonial-header">
                         <img src="https://randomuser.me/api/portraits/women/63.jpg"
-                             alt="Nelson Mandela"
+                             alt="Grace Wambui"
                              class="testimonial-avatar"
                              loading="lazy"
                              width="60"
                              height="60">
                         <div class="testimonial-author-info">
-                            <h4 class="testimonial-author">Nelson Mandela</h4>
+                            <h4 class="testimonial-author">Grace Wambui</h4>
                             <p class="testimonial-role">Senior Developer, Nairobi Tech Hub</p>
                         </div>
                     </div>
